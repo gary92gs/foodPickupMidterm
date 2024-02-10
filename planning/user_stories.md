@@ -21,3 +21,7 @@ As an owner, I can update the menu items avaliable (Price, Description)
 
 ## Change Proposals
 GS - (stretch) As an owner, I can edit an order time, otherwise default time is determined by menu_item.
+GS - do we actaully need a cart? Maybe we just track the cart as an object in the website, and when the cart is finalized it becomes an ORDER in the database?
+GS - as a user, I can message the restaurant with special instructions, because I am picky
+GS - (STRETCH) as a user, I can check the nutritional information and allergens (nuts, dairy, seeds, gluten) for each menu_item, because I am watching my weight and I don't want to die from peanuts (QUESTION - DOES THIS FIT OUR THEME?)
+
