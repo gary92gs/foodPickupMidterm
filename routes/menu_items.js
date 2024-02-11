@@ -1,6 +1,6 @@
 const express = require('express');
 const router  = express.Router();
-const MenuItemsModel = require('./../models/menu_itemsModel')
+const MenuItemsModel = require('./../db/queries/menu_itemsModel')
 
 router.get('/', (req, res) => {
   MenuItemsModel.getMeals()

@@ -14,9 +14,11 @@
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/nav.css" />
   <link rel="stylesheet" href="/styles/header.css" />
+  <link rel="stylesheet" href="/styles/menu.css" />
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
+  <script defer src="/scripts/menu.js"></script>
 </head>
 
 <body>
@@ -35,17 +37,30 @@
   <main class="container">
     <header>
       <div class="std-border">
-        <button type="submit">APPETIZERS</button>
-        <button type="submit">MAINS</button>
-        <button type="submit">DESSERTS</button>
-        <button type="submit">DRINKS</button>
-        <button type="submit">CART</button>
+        <button id="app-but" type="submit">APPETIZERS</button>
+        <button id="main-but" type="submit">MAINS</button>
+        <button id="des-but" type="submit">DESSERTS</button>
+        <button id="drink-but" type="submit">DRINKS</button>
+        <button id="cart-but" type="submit">CART</button>
       </div>
       <div>
-        <h1>The line up picture</h1>
+        <img src="/images/lineup.PNG">
       </div>
     </header>
-    <h1>Menu down here eventually</h1>
+    <div class="menu">
+      <div id="appies">
+        <h1>I'm a container for appies</h1>
+      </div>
+      <div id="mains">
+        <h1>I'm a container for mains</h1>
+      </div>
+      <div id="desserts">
+        <h1>I'm a container for desserts</h1>
+      </div>
+      <div id="drinks">
+        <h1>I'm a container for drinks</h1>
+      </div>
+    </div>
   </main>
 </body>
 

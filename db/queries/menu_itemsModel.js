@@ -1,4 +1,4 @@
-const db = require('./../db/connection');
+const db = require('../connection');
 
 const getMeals = () => {
   const query = `
@@ -7,7 +7,10 @@ const getMeals = () => {
     FROM menu_items
     JOIN food_categories ON food_categories.id = categorie_id;
   `
-  return db.query(query);
+  return db.query(query)
+    .then((data) => {
+      return data.rows
+    })
 };
 
 module.exports = { getMeals };
