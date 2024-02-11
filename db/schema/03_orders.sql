@@ -4,9 +4,9 @@ CREATE TABLE orders (
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   total_cost INTEGER NOT NULL DEFAULT 0,
 
-  placed_at TIMESTAMP NOT NULL DEFAULT 0,
-  accepted_at TIMESTAMP NOT NULL DEFAULT 0,
-  completed_at TIMESTAMP NOT NULL DEFAULT 0,
+  placed_at TIMESTAMP,
+  accepted_at TIMESTAMP,
+  completed_at TIMESTAMP,
   time_to_comeplete INTEGER NOT NULL DEFAULT 0,
 
   is_active BOOLEAN NOT NULL DEFAULT TRUE
