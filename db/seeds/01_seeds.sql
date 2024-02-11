@@ -1,3 +1,10 @@
+INSERT INTO food_categories (name)
+VALUES ('Appetizers'),
+('Mains'),
+('Dessert'),
+('Beverages');
+
+
 INSERT INTO menu_items (categorie_id, name, description, image_url, price, size, avg_prep_time_mins)
 VALUES
 (1, 'Mozzarella Sticks', 'Crispy fried mozzarella sticks served with marinara sauce.', 'https://images.pexels.com/photos/5639378/pexels-photo-5639378.jpeg?auto=compress&cs=tinysrgb&w=600', 8.99, 'Regular', 15),

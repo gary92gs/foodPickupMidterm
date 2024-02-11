@@ -1,6 +1,0 @@
-DROP TABLE IF EXISTS food_categories CASCADE;
-
-CREATE TABLE food_categories (
-  id SERIAL PRIMARY KEY NOT NULL,
-  name VARCHAR(50) NOT NULL
-);
