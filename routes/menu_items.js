@@ -11,7 +11,6 @@ router.get('/', (req, res) => {
       return res.render('menu_items', templateVariables);
     })
 
-
 });
 
 module.exports = router;
