@@ -8,9 +8,6 @@ const getOrders = () => {
   `)
   .then(data => {
     return data.rows;
-  })
-  .catch((err) => {
-    console.log(err.message);
   });
 
 };
