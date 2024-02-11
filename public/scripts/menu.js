@@ -24,7 +24,7 @@ $(document).ready(function() {
         } else if (meal.type === 'Dessert') {
           $('#desserts').append(mealHTML);
         } else if (meal.type === 'Beverages') {
-          $('#desserts').append(mealHTML);
+          $('#drinks').append(mealHTML);
         }
       });
     },
