@@ -1,0 +1,19 @@
+header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  div {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+    button {
+      margin: 1% 0%;
+    }
+
+    #line-up {
+      border: none;
+    }
+  }
+}
