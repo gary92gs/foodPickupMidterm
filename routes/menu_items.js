@@ -1,8 +1,19 @@
 const express = require('express');
 const router  = express.Router();
+const MenuItemsModel = require('./../models/menu_itemsModel')
 
 router.get('/', (req, res) => {
-  res.render('users');
+  MenuItemsModel.getMeals()
+    .then((result) => {
+      console.log(result.rows);
+      const templateVariables = {
+        menu_items: result.rows
+      }
+
+      return res.render('menu_items', templateVariables);
+    })
+
+
 });
 
 module.exports = router;

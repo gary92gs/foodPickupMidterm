@@ -1,6 +1,8 @@
 DROP TABLE IF EXISTS menu_items CASCADE;
+
 CREATE TABLE menu_items (
   id SERIAL PRIMARY KEY NOT NULL,
+  categorie_id INTEGER REFERENCES food_categories(id) ON DELETE CASCADE,
   name VARCHAR(50) NOT NULL,
   description TEXT NOT NULL,
   image_url TEXT NOT NULL,

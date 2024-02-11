@@ -38,7 +38,7 @@ const usersRoutes = require('./routes/users');
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 
-app.use('/meal-items', mealRoutes);
+app.use('/menu-items', mealRoutes);
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
