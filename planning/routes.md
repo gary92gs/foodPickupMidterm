@@ -1,7 +1,3 @@
-
-
-
-
 Default route 
 / Index page
 
