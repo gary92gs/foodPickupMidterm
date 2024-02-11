@@ -1,7 +1,7 @@
 -- Users table seeds here (Example)
 
 INSERT INTO users (username, phone_number, email, super_user)
-VALUES('KeyserSaucy', 2125550239, 'keyser@example.com');
+VALUES('KeyserSaucy', 2125550239, 'keyser@example.com',TRUE);
 
 INSERT INTO users (username, phone_number, email) VALUES
 ('QuipKingKint', 2125550187, 'verbal@example.com'),
