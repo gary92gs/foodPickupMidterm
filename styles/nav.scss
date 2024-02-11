@@ -1,0 +1,11 @@
+nav {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .left-nav {
+    display: flex;
+    flex-direction: row;
+  }
+}
