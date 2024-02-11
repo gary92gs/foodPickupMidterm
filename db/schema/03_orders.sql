@@ -7,7 +7,6 @@ CREATE TABLE orders (
   placed_at TIMESTAMP,
   accepted_at TIMESTAMP,
   completed_at TIMESTAMP,
-  time_to_comeplete INTEGER NOT NULL DEFAULT 0,
 
   is_active BOOLEAN NOT NULL DEFAULT TRUE
 );
