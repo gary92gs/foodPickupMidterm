@@ -4,7 +4,7 @@ INSERT INTO cart_items (order_id, menu_item_id, quantity, is_active)
 VALUES (1, 2, 1, true),
 (2, 10, 4, true),
 (3, 15, 1, true),
-(4, 5 1, true),
+(4, 5, 1, true),
 (5, 1, 3, true),
 
 (6, 9, 1, true),
