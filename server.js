@@ -29,7 +29,7 @@ app.use(express.static('public'));
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 
-const mealRoutes = require('./routes/meal-items')
+const mealRoutes = require('./routes/menu_items')
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
