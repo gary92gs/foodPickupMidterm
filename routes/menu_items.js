@@ -5,11 +5,9 @@ const MenuItemsModel = require('./../models/menu_itemsModel')
 router.get('/', (req, res) => {
   MenuItemsModel.getMeals()
     .then((result) => {
-      console.log(result.rows);
       const templateVariables = {
         menu_items: result.rows
       }
-
       return res.render('menu_items', templateVariables);
     })
 
