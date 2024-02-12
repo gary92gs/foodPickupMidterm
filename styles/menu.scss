@@ -20,11 +20,16 @@
 }
 
 .meal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   flex-basis: calc(33.33% - 10px); /* Set the initial size of each item to 33.33% of the container width minus the gap */
   background-color: #f0f0f0;
-  padding: 20px;
   text-align: center;
   border-radius: 15%;
+  max-width: 100%;
+  max-height: 100%;
 
   img {
     max-width: 50%;
