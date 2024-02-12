@@ -1,10 +1,12 @@
 // load .env data into process.env
 require('dotenv').config();
 
+
 // Web server config
 const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
+const cookieSession = require('cookie-session');
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -16,6 +18,10 @@ app.set('view engine', 'ejs');
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieSession({
+  name: 'session',
+  keys: ['catch22'],
+}));
 app.use(
   '/styles',
   sassMiddleware({
@@ -56,7 +62,6 @@ app.get('/', (req, res) => {
 });
 
 app.get('/login/:id', (req, res) => {
-  console.log(req.params.id);
   req.session.user_id = req.params.id;
   res.redirect('/');
 });
