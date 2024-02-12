@@ -2,4 +2,39 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+
+  h1 {
+    flex-basis: 90%; /* Header takes up the full width */
+    background-color: #ccc;
+    padding: 1%;
+    text-align: center;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+}
+
+.meal-cat {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap into multiple lines */
+  gap: 10px; /* Adjust the gap between grid items */
+}
+
+.meal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-basis: calc(33.33% - 10px); /* Set the initial size of each item to 33.33% of the container width minus the gap */
+  background-color: #f0f0f0;
+  text-align: center;
+  border-radius: 15%;
+  max-width: 100%;
+  max-height: 100%;
+
+  img {
+    max-width: 50%;
+    max-height: 40%;
+    border: solid 1px black;
+    border-radius: 10px;
+  }
 }

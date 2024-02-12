@@ -9,9 +9,9 @@ $(document).ready(function() {
       meals.forEach(function(meal) {
         const mealHTML = `
           <div class="meal">
+            <img src="${meal.image_url}">
             <h2>${meal.name}</h2>
-            <p>Type: ${meal.type}</p>
-            <p>Description: ${meal.description}</p>
+            <p>${meal.description}</p>
             <p>Price: ${meal.price}</p>
             <p>Size: ${meal.size}</p>
           </div>
@@ -24,7 +24,7 @@ $(document).ready(function() {
         } else if (meal.type === 'Dessert') {
           $('#desserts').append(mealHTML);
         } else if (meal.type === 'Beverages') {
-          $('#desserts').append(mealHTML);
+          $('#drinks').append(mealHTML);
         }
       });
     },
