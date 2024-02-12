@@ -1,6 +1,9 @@
 // load .env data into process.env
 require('dotenv').config();
 
+//load cookie library
+const cookieSession = require('cookie-session');
+
 // Web server config
 const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
@@ -16,6 +19,10 @@ app.set('view engine', 'ejs');
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieSession({
+  name: 'session',
+  keys: ['catch22'],
+}));
 app.use(
   '/styles',
   sassMiddleware({
@@ -29,7 +36,7 @@ app.use(express.static('public'));
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 
-const mealApiRoutes = require('./routes/menu-items-api')
+const mealApiRoutes = require('./routes/menu-items-api');
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
@@ -51,6 +58,12 @@ app.use('/users', usersRoutes);
 
 app.get('/', (req, res) => {
   res.render('index');
+});
+
+app.get('/login/:id', (req, res) => {
+  console.log(req.params.id);
+  req.session.user_id = req.params.id;
+  res.redirect('/');
 });
 
 app.listen(PORT, () => {
