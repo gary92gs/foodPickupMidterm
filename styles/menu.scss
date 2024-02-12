@@ -2,4 +2,27 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+
+  h1 {
+    flex-basis: 90%; /* Header takes up the full width */
+    background-color: #ccc;
+    padding: 1%;
+    text-align: center;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+}
+
+.meal-cat {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap into multiple lines */
+  gap: 10px; /* Adjust the gap between grid items */
+}
+
+.meal {
+  flex-basis: calc(33.33% - 10px); /* Set the initial size of each item to 33.33% of the container width minus the gap */
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+  border-radius: 15%;
 }
