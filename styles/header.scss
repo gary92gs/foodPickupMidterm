@@ -1,0 +1,29 @@
+header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  div {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+    button {
+      margin: 1% 0%;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+#button-nav {
+  position: fixed;
+  width: 90%;
+  background-color: white;
+}
+
+#header-img {
+  padding-top: 3.5%;
+}

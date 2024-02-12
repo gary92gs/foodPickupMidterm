@@ -8,8 +8,8 @@ VALUES ('Appetizers'),
 INSERT INTO menu_items (categorie_id, name, description, image_url, price, size, avg_prep_time_mins)
 VALUES
 (1, 'Mozzarella Sticks', 'Crispy fried mozzarella sticks served with marinara sauce.', 'https://images.pexels.com/photos/5639378/pexels-photo-5639378.jpeg?auto=compress&cs=tinysrgb&w=600', 8.99, 'Regular', 15),
-(1, 'Nachos Supreme', 'Tortilla chips topped with melted cheese, jalapenos, sour cream, and guacamole.', 'nachos_supreme.jpg', 10.99, 'Large', 20),
-(1, 'Buffalo Wings', 'Spicy buffalo wings served with celery sticks and blue cheese dressing.', 'buffalo_wings.jpg', 9.99, 'Regular', 18),
+(1, 'Nachos Supreme', 'Tortilla chips topped with melted cheese, jalapenos, sour cream, and guacamole.', 'https://images.pexels.com/photos/1200354/pexels-photo-1200354.jpeg?auto=compress&cs=tinysrgb&w=600', 10.99, 'Large', 20),
+(1, 'Buffalo Wings', 'Spicy buffalo wings served with celery sticks and blue cheese dressing.', 'https://images.pexels.com/photos/13998980/pexels-photo-13998980.jpeg?auto=compress&cs=tinysrgb&w=600', 9.99, 'Regular', 18),
 (1, 'Spinach Artichoke Dip', 'Creamy spinach and artichoke dip served with crispy tortilla chips.', 'spinach_artichoke_dip.jpg', 7.99, 'Regular', 16),
 (1, 'Bruschetta', 'Toasted bread topped with fresh tomatoes, basil, garlic, and balsamic glaze.', 'bruschetta.jpg', 6.99, 'Regular', 12),
 
