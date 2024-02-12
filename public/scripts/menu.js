@@ -32,4 +32,7 @@ $(document).ready(function() {
       console.error('Error fetching meal data:', error);
     }
   });
+
 });
+
+
