@@ -1,6 +1,5 @@
 const db = require('./../connection');
 
-
 //GET functions
 
 /**
@@ -34,7 +33,7 @@ const getCartItem = (cartItemId) => {
   FROM cart_items
   JOIN orders ON order_id = orders.id
   WHERE orders.user_id = $1;
-  `, [userId])
+  `, [cartItemId])
   .then((result) => {
     return result.rows;
   });
@@ -43,4 +42,4 @@ const getCartItem = (cartItemId) => {
 
 
 
-module.exports = { getCartItems };
+module.exports = { getCartItems, getCartItem };

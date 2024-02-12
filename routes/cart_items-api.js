@@ -17,4 +17,20 @@ router.get('/', (req, res) => {
     })
 });
 
+router.get('/:id', (req, res) => {
+
+  //get the cart item id
+  const cartItemId = req.params
+
+  //get that cart item's information
+  cartItemsQueries.getCartItems(cartItemId)
+    .then(cartItem => {
+      res.json({ cartItem })
+    })
+    .catch(error => {
+      res.status(500).json({error: error.message});
+    })
+});
+
+
 module.exports = router;
