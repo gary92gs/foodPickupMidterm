@@ -1,5 +1,6 @@
 const db = require('./../connection');
 
+//Get functions
 const getOrderWithUserId = (userId) => {
 
   return db.query(`
@@ -7,13 +8,12 @@ const getOrderWithUserId = (userId) => {
   FROM orders
   JOIN users ON user_id = users.id
   WHERE orders.user_id = $1;
-  `, userId)
-  .then(data => {
+  `, [userId])
+  .then((data) => {
     return data.rows;
   });
 
 };
-
 
 const getOrders = () => {
 
@@ -22,11 +22,30 @@ const getOrders = () => {
   FROM orders
   JOIN users ON user_id = users.id;
   `)
-  .then(data => {
+  .then((data) => {
     return data.rows;
   });
 
 };
 
 
-module.exports = { getOrders, getOrderWithUserId };
+//Post functions
+/**
+ * Add a new order to the database.
+/* @param {{user_id: integer, total_cost: integer, placed_at: timestamp, accepted_at: timestamp, completed_at: timestamp}} order
+*/
+
+const addOrder = (order) => {
+
+  return db.query(`
+  INSERT INTO orders (user_id, total_cost, placed_at, accepted_at, completed_at)
+  VALUES ($1, $2, $3, $4, $5)
+  RETURNING *;
+  `,[order.user_id, order.total_cost, order.placed_at, order.accepted_at, order.completed_at])
+  .then((result) => {
+    return result.rows;
+  });
+
+};
+
+module.exports = { getOrders, getOrderWithUserId, addOrder };
