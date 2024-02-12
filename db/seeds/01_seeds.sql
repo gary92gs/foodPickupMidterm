@@ -29,4 +29,5 @@ VALUES
 (4, 'Iced Tea', 'Refreshing iced tea with a hint of lemon, sweetened or unsweetened.', 'iced_tea.jpg', 2.99, 'Regular', 5),
 (4, 'Lemonade', 'Homemade lemonade made with fresh squeezed lemons and cane sugar.', 'lemonade.jpg', 3.49, 'Regular', 5),
 (4, 'Coffee', 'Freshly brewed coffee, regular or decaf.', 'coffee.jpg', 2.99, 'Regular', 5),
-(4, 'Milkshake', 'Creamy milkshake available in chocolate, vanilla, or strawberry flavor.', 'milkshake.jpg', 4.99, 'Regular', 8);
+(4, 'Milkshake', 'Creamy milkshake available in chocolate, vanilla, or strawberry flavor.', 'milkshake.jpg', 4.99, 'Regular', 8),
+(4, 'MilkshakeCACA', 'Creamy milkshake available in chocolateBUTTER, vanilla, or strawberry flavor.', 'milkshake.jpg', 4.99, 'Regular', 8);
