@@ -29,6 +29,15 @@ router.get('/', (req, res) => {
     })
 });
 
-
+router.post('/', (req, res) => {
+  orderQueries.addOrder(order)
+    .then((order) => {
+      req.session.orderId = order.id;
+      res.send('order created succesfully');
+    })
+    .catch(error => {
+      res.status(500).json({error: error.message});
+  });
+});
 
 module.exports = router;
