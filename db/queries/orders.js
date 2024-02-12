@@ -1,6 +1,9 @@
 const db = require('./../connection');
 
 //Get functions
+/**
+* @param {{user_id: integer}} userId
+*/
 const getOrderWithUserId = (userId) => {
 
   return db.query(`
@@ -9,8 +12,8 @@ const getOrderWithUserId = (userId) => {
   JOIN users ON user_id = users.id
   WHERE orders.user_id = $1;
   `, [userId])
-  .then((data) => {
-    return data.rows;
+  .then((result) => {
+    return result.rows;
   });
 
 };
@@ -22,8 +25,8 @@ const getOrders = () => {
   FROM orders
   JOIN users ON user_id = users.id;
   `)
-  .then((data) => {
-    return data.rows;
+  .then((result) => {
+    return result.rows;
   });
 
 };
@@ -31,8 +34,8 @@ const getOrders = () => {
 
 //Post functions
 /**
- * Add a new order to the database.
-/* @param {{user_id: integer, total_cost: integer, placed_at: timestamp, accepted_at: timestamp, completed_at: timestamp}} order
+* Add a new order to the database.
+* @param {{user_id: integer, total_cost: integer, placed_at: timestamp, accepted_at: timestamp, completed_at: timestamp}} order
 */
 
 const addOrder = (order) => {
