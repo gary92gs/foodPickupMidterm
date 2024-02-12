@@ -5,10 +5,10 @@ const cartItemsQueries = require('../db/queries/cart_items');
 
 router.get('/', (req, res) => {
 
-  //extract user id through cookie
+  //extract order id through cookie
 
-  //get that user's order information
-  cartItemsQueries.getCartItems(userId)
+  //get that order's cart information
+  cartItemsQueries.getCartItems(orderId)
     .then(cartItems => {
       res.json({ cartItems })
     })
