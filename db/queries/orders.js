@@ -65,7 +65,7 @@ const deleteOrder = (orderId) => {
 
 /**
 * Add a new order to the database.
-* @param {{user_id: integer, total_cost: integer, placed_at: timestamp, accepted_at: timestamp, completed_at: timestamp}} order
+* @param {{user_id: integer, total_cost: integer, placed_at: timestamp, accepted_at: timestamp, completed_at: timestamp, cart -items}} order
 */
 
 const addOrder = (order) => {
