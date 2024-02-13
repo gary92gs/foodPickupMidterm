@@ -49,4 +49,22 @@ router.post('/', (req, res) => {
   });
 });
 
+
+//Delete route
+
+router.post('/:id/delete', (req, res) => {
+
+  //get the order id
+  const orderId = req.params.id;
+  //delete the order
+  orderQueries.deleteOrder(orderId)
+    .then(deletedOrder => {
+      res.json({ deletedOrder });
+    })
+    .catch(error => {
+      res.status(500).json({error: error.message});
+    })
+
+  });
+
 module.exports = router;

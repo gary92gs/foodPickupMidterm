@@ -63,8 +63,8 @@ router.post('/:id/delete', (req, res) => {
   const cartItemId = req.params.id;
   //delete the cart item
   cartItemsQueries.deleteCartItem(cartItemId)
-    .then(updatedCartItem => {
-      res.json({ updatedCartItem });
+    .then(deletedCartItem => {
+      res.json({ deletedCartItem });
     })
     .catch(error => {
       res.status(500).json({error: error.message});

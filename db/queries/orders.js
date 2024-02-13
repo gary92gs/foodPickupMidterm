@@ -42,6 +42,27 @@ const getOrders = () => {
 
 
 //Post functions
+
+
+/**
+* Delete a single order with order id
+* @param {{order_id: integer}} orderId
+*/
+
+const deleteOrder = (orderId) => {
+
+  return db.query(`
+  DELETE FROM orders
+  WHERE id = $1
+  RETURNING *;
+  `, [orderId])
+  .then((result) => {
+    return result.rows;
+  });
+
+};
+
+
 /**
 * Add a new order to the database.
 * @param {{user_id: integer, total_cost: integer, placed_at: timestamp, accepted_at: timestamp, completed_at: timestamp}} order
@@ -82,4 +103,4 @@ const addOrder = (order) => {
 
 };
 
-module.exports = { getOrders, getOrderWithUserId, addOrder };
+module.exports = { getOrders, getOrderWithUserId, deleteOrder, addOrder };
