@@ -6,7 +6,7 @@ const cartItemsQueries = require('../db/queries/cart_items');
 router.get('/', (req, res) => {
 
   //extract order id through cookie
-  const orderId = 1;
+  const orderId = 2;
   //get that order's cart information
   cartItemsQueries.getCartItems(orderId)
     .then(cartItems => {
@@ -39,16 +39,17 @@ router.get('/:id', (req, res) => {
 router.post('/:id', (req, res) => {
 
 //get the cart item id
+const cartItemId = req.params.id
 //get the new quantity
+const newQuantity = 3;
 
 //edit the cart item quantity
 cartItemsQueries.editCartItemQuant(cartItemId, newQuantity)
   .then(updatedCartItem => {
     res
-      .json({ updatedCartItem })
-      .send('cart item quantity updated');
+      .json({ updatedCartItem });
   })
-  .cath(error => {
+  .catch(error => {
     res.status(500).json({error: error.message});
   })
 
@@ -59,15 +60,13 @@ cartItemsQueries.editCartItemQuant(cartItemId, newQuantity)
 router.post('/:id/delete', (req, res) => {
 
   //get the cart item id
-
+  const cartItemId = req.params.id;
   //delete the cart item
   cartItemsQueries.deleteCartItem(cartItemId)
     .then(updatedCartItem => {
-      res
-        .json({ updatedCartItem })
-        .send('cart item quantity updated');
+      res.json({ updatedCartItem });
     })
-    .cath(error => {
+    .catch(error => {
       res.status(500).json({error: error.message});
     })
 

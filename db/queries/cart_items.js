@@ -69,7 +69,8 @@ const deleteCartItem = (cartItemId) => {
 
   return db.query(`
   DELETE FROM cart_items
-  WHERE id = $1;
+  WHERE id = $1
+  RETURNING *;
   `, [cartItemId])
   .then((result) => {
     return result.rows;
@@ -83,19 +84,19 @@ const deleteCartItem = (cartItemId) => {
 * @param {{order_id: integer, menu_item_id: integer, quantity: integer, is_active: boolean}} cartItem
 */
 
-const addCartItem = (cartItem) => {
+// const addCartItem = (cartItem) => {
 
-  return db.query(`
-  INSERT INTO cart_items (order_id, menu_item_id, quantity)
-  VALUES ($1, $2, $3)
-  RETURNING *;
-  `,[cartItem.order_id, cartItem.menu_item_id, cartItem.quantity])
-  .then((result) => {
-    return result.rows;
-  });
+//   return db.query(`
+//   INSERT INTO cart_items (order_id, menu_item_id, quantity)
+//   VALUES ($1, $2, $3)
+//   RETURNING *;
+//   `,[cartItem.order_id, cartItem.menu_item_id, cartItem.quantity])
+//   .then((result) => {
+//     return result.rows;
+//   });
 
-};
+// };
 
 
 
-module.exports = { getCartItems, getCartItem, editCartItemQuant, deleteCartItem, addCartItem };
+module.exports = { getCartItems, getCartItem, editCartItemQuant, deleteCartItem};
