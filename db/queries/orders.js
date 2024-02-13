@@ -63,13 +63,11 @@ const addOrder = (order) => {
     INSERT INTO cart_items (order_id, menu_item_id, quantity)
     VALUES ($1, $2, $3)
     RETURNING *;
-  `,[orderId, cartItem.menu_item_id, cartItem.quantity])
+  `,[orderId, cartItem[0], cartItem[1]])
 
     promises.push(promise);
     }
     return Promise.all(promises);
-
-
 
   })
   .then((result) => {
