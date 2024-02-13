@@ -18,6 +18,7 @@ router.get('/all', (req, res) => {
 router.get('/', (req, res) => {
 
   //extract user id through cookie
+  const userId = 1;
 
   //get that user's order information
   orderQueries.getOrderWithUserId(userId)
@@ -29,11 +30,19 @@ router.get('/', (req, res) => {
     })
 });
 
+//get the array of finalized cart items
+//req.body
+
 router.post('/', (req, res) => {
+  console.log(req.body);
+  //grab the order info
+  const order = req.body
+  order.user_id = 1;
+
   orderQueries.addOrder(order)
     .then((order) => {
       req.session.orderId = order.id;
-      res.send('order created succesfully');
+      res.json(order);
     })
     .catch(error => {
       res.status(500).json({error: error.message});
