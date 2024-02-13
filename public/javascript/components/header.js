@@ -17,9 +17,6 @@ $(() => {
           <button type="submit">Order for Pickup</button>
         </section>
       </nav>
-      <div>
-        <p>I am where the menu would show up</p>
-      </>
     </div>
       `;
     $pageHeader.append(userLinks);

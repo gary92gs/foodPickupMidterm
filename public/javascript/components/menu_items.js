@@ -31,21 +31,26 @@ $(() => {
       <button id="drink-but" type="submit">DRINKS</button>
       <button id="cart-but" type="submit">CART</button>
     </div>
-    <div id="header-img">
-      <img src="/images/lineup.PNG">
-    </div>
   `;
 
-  $navWrapper.html(menuLinks);
-  $navContainer.append($navWrapper);
+    $navWrapper.html(menuLinks);
+    $navContainer.append($navWrapper);
 
-    // Re-create the meal category containers
-    const categories = ['Appetizers', 'Mains', 'Desserts', 'Beverages'];
-    categories.forEach(category => {
-      const $categoryContainer = $('<div>').addClass('meal-cat').attr('id', category);
-      $categoryContainer.append(`<h1>${category.charAt(0).toUpperCase() + category.slice(1)}</h1>`);
-      $menuWrapper.append($categoryContainer);
-    });
+      // Re-create the meal category containers
+      const categories = ['Appetizers', 'Mains', 'Desserts', 'Beverages'];
+      categories.forEach(category => {
+        const $categoryContainer = $('<div>').addClass('meal-cat').attr('id', category);
+        $categoryContainer.append(`<h1>${category.charAt(0).toUpperCase() + category.slice(1)}</h1>`);
+        $menuWrapper.append($categoryContainer);
+      });
+
+    let imgHTML = `
+      <div id="header-img">
+          <img src="/images/lineup.PNG">
+        </div>
+    `;
+
+    $mainContainer.prepend(imgHTML);
   }
 
   function listMenuItems(meals) {
