@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 const cartItemsQueries = require('../db/queries/cart_items');
 
-
+//Browse route
 router.get('/', (req, res) => {
 
   //extract order id through cookie
-
+  const orderId = 1;
   //get that order's cart information
   cartItemsQueries.getCartItems(orderId)
     .then(cartItems => {
@@ -17,11 +17,12 @@ router.get('/', (req, res) => {
     })
 });
 
+//Read route
 router.get('/:id', (req, res) => {
 
   //get the cart item id
-  const cartItemId = req.params
-
+  const cartItemId = req.params.id
+  console.log(req.params.id);
   //get that cart item's information
   cartItemsQueries.getCartItems(cartItemId)
     .then(cartItem => {
@@ -31,6 +32,46 @@ router.get('/:id', (req, res) => {
       res.status(500).json({error: error.message});
     })
 });
+
+//Add route
+
+//Edit route
+router.post('/:id', (req, res) => {
+
+//get the cart item id
+//get the new quantity
+
+//edit the cart item quantity
+cartItemsQueries.editCartItemQuant(cartItemId, newQuantity)
+  .then(updatedCartItem => {
+    res
+      .json({ updatedCartItem })
+      .send('cart item quantity updated');
+  })
+  .cath(error => {
+    res.status(500).json({error: error.message});
+  })
+
+});
+
+//Delete route
+
+router.post('/:id/delete', (req, res) => {
+
+  //get the cart item id
+
+  //delete the cart item
+  cartItemsQueries.deleteCartItem(cartItemId)
+    .then(updatedCartItem => {
+      res
+        .json({ updatedCartItem })
+        .send('cart item quantity updated');
+    })
+    .cath(error => {
+      res.status(500).json({error: error.message});
+    })
+
+  });
 
 
 module.exports = router;
