@@ -1,10 +1,13 @@
 $(() => {
   window.menuItems = {}
-  const $mainContainer = $('#main-content')
+  const $mainContainer = $('#main-content');
+
+  const $navContainer = $('#nav-alpha');
 
   const $menuWrapper = $('<div>').addClass('menu');
 
   const $navWrapper = $('<div>').addClass('nav-header');
+
 
   function addMeal(meal, container) {
     container.append(meal);
@@ -13,7 +16,12 @@ $(() => {
   function clearMenuItems() {
     $menuWrapper.empty();
     $navWrapper.empty();
-    $mainContainer.empty().append($menuWrapper)
+    $mainContainer.empty();
+  }
+
+  function populateMenuItems() {
+
+    $mainContainer.append($menuWrapper);
 
     let menuLinks = `
     <div id="button-nav" class="std-border">
@@ -29,7 +37,7 @@ $(() => {
   `;
 
   $navWrapper.html(menuLinks);
-  $mainContainer.prepend($navWrapper);
+  $navContainer.append($navWrapper);
 
     // Re-create the meal category containers
     const categories = ['Appetizers', 'Mains', 'Desserts', 'Beverages'];
@@ -42,7 +50,7 @@ $(() => {
 
   function listMenuItems(meals) {
     clearMenuItems();
-
+    populateMenuItems();
 
     // Get meals
     for (const mealId in meals) {
@@ -69,6 +77,6 @@ $(() => {
   };
 
   window.menuItems.listMenuItems = listMenuItems;
-
+  window.menuItems.clear = clearMenuItems;
 
 });

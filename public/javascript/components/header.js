@@ -4,6 +4,7 @@ $(() => {
 
   function updateHeader() {
     let userLinks = `
+    <div id="nav-alpha">
         <nav class="nav-container">
           <section class="left-nav">
           <h1>THE CULPRIT'S KITCHEN</h1>
@@ -16,6 +17,10 @@ $(() => {
           <button type="submit">Order for Pickup</button>
         </section>
       </nav>
+      <div>
+        <p>I am where the menu would show up</p>
+      </>
+    </div>
       `;
     $pageHeader.append(userLinks);
   }
