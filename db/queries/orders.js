@@ -8,9 +8,10 @@ const db = require('./../connection');
 const getOrderWithUserId = (userId) => {
 
   return db.query(`
-  SELECT orders.id AS order_id, orders.user_id AS user, orders.total_cost AS order_total
+  SELECT *
   FROM orders
-  JOIN users ON user_id = users.id
+  JOIN cart_items ON order_id = orders.id
+  JOIN menu_items ON menu_item_id = menu_items.id
   WHERE orders.user_id = $1;
   `, [userId])
   .then((result) => {
@@ -29,6 +30,8 @@ const getOrders = () => {
   SELECT *
   FROM orders
   JOIN users ON user_id = users.id
+  JOIN cart_items ON order_id = orders.id
+  JOIN menu_items ON menu_item_id = menu_items.id;
 
   `)
   .then((result) => {
