@@ -1,4 +1,4 @@
-$(function() {
+$(() => {
   window.header = {};
   const $pageHeader = $('#page-header');
 
@@ -11,7 +11,7 @@ $(function() {
         </section>
         <section class="right-nav">
           <button type="submit">ABOUT</button>
-          <button type="submit">MENU</button>
+          <button id="menu-but" type="submit">MENU</button>
           <button type="submit">CAREERS</button>
           <button type="submit">Order for Pickup</button>
         </section>
@@ -22,6 +22,6 @@ $(function() {
 
   window.header.update = updateHeader;
 
-  // Call updateHeader once the DOM is ready
-  updateHeader();
+  updateHeader()
 });
+

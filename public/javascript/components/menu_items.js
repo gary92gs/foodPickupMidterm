@@ -4,13 +4,33 @@ $(() => {
 
   const $menuWrapper = $('<div>').addClass('menu');
 
+  const $navWrapper = $('<div>').addClass('nav-header');
+
   function addMeal(meal, container) {
     container.append(meal);
   };
 
   function clearMenuItems() {
-    $menuWrapper.empty()
-    $mainContainer.empty().append($menuWrapper);
+    $menuWrapper.empty();
+    $navWrapper.empty();
+    $mainContainer.empty().append($menuWrapper)
+
+    let menuLinks = `
+    <div id="button-nav" class="std-border">
+      <button id="app-but" type="submit">APPETIZERS</button>
+      <button id="main-but" type="submit">MAINS</button>
+      <button id="des-but" type="submit">DESSERTS</button>
+      <button id="drink-but" type="submit">DRINKS</button>
+      <button id="cart-but" type="submit">CART</button>
+    </div>
+    <div id="header-img">
+      <img src="/images/lineup.PNG">
+    </div>
+  `;
+
+  $navWrapper.html(menuLinks);
+  $mainContainer.prepend($navWrapper);
+
     // Re-create the meal category containers
     const categories = ['Appetizers', 'Mains', 'Desserts', 'Beverages'];
     categories.forEach(category => {
@@ -22,6 +42,9 @@ $(() => {
 
   function listMenuItems(meals) {
     clearMenuItems();
+
+
+    // Get meals
     for (const mealId in meals) {
       const meal = meals[mealId]
       mealLayout = menuItem.listMenuItem(meal);
