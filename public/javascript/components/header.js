@@ -10,7 +10,7 @@ $(() => {
           <p>PlaceHolder Icon</p>
         </section>
         <section class="right-nav">
-          <button type="submit">ABOUT</button>
+          <button id="about-but" type="submit">ABOUT</button>
           <button id="menu-but" type="submit">MENU</button>
           <button type="submit">CAREERS</button>
           <button type="submit">Order for Pickup</button>
