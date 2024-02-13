@@ -22,6 +22,8 @@ app.use(cookieSession({
   name: 'session',
   keys: ['catch22'],
 }));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(
   '/styles',
   sassMiddleware({
@@ -37,6 +39,9 @@ app.use(express.static('public'));
 
 const mealApiRoutes = require('./routes/menu-items-api');
 const orderRoutes = require('./routes/orders');
+const mealRoutes = require('./routes/menu_items')
+const orderRoutes = require('./routes/orders-api');
+const cartItemsRoutes = require('./routes/cart_items-api');
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
@@ -47,6 +52,9 @@ const usersRoutes = require('./routes/users');
 
 app.use('/api/menu-items', mealApiRoutes);
 app.use('/orders', orderRoutes);
+app.use('/menu-items', mealRoutes);
+app.use('/api/orders', orderRoutes);
+app.use('/api/cart-items', cartItemsRoutes);
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
