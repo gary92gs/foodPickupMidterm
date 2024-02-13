@@ -29,7 +29,6 @@ $(() => {
       <button id="main-but" type="submit">MAINS</button>
       <button id="des-but" type="submit">DESSERTS</button>
       <button id="drink-but" type="submit">DRINKS</button>
-      <button id="cart-but" type="submit">CART</button>
     </div>
   `;
 

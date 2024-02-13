@@ -13,7 +13,7 @@ $(() => {
         <section class="right-nav">
           <button id="about-but" type="submit">ABOUT</button>
           <button id="menu-but" type="submit">MENU</button>
-          <button type="submit">CAREERS</button>
+          <button id="cart-but" type="submit">CART</button>
           <button type="submit">Order for Pickup</button>
         </section>
       </nav>

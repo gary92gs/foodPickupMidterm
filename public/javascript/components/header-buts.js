@@ -19,5 +19,3 @@
     about.getAboutPage();
   });
 });
-
-
