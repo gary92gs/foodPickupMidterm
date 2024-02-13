@@ -1,7 +1,8 @@
-header {
+.nav-header {
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 
   div {
     width: 100%;
@@ -11,19 +12,9 @@ header {
     button {
       margin: 1% 0%;
     }
-
-    img {
-      width: 100%;
-    }
   }
 }
 
 #button-nav {
-  position: fixed;
-  width: 90%;
   background-color: white;
-}
-
-#header-img {
-  padding-top: 3.5%;
 }

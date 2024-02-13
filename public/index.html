@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Home Page</title>
+
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/nav.css" />
+  <link rel="stylesheet" href="/styles/header.css" />
+  <link rel="stylesheet" href="/styles/menu.css" />
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+</head>
+
+<body>
+  <header id="page-header" class="page-header"></header>
+
+  <main id="main-content"></main>
+
+  <!-- load our scripts after the rest of the DOM gets loaded -->
+  <script src="javascript/network.js"></script>
+  <script src="javascript/views_manager.js"></script>
+  <script src="javascript/index.js"></script>
+  <script src="javascript/helpers.js"></script>
+
+
+  <!-- components -->
+  <script src="javascript/components/header.js"></script>
+  <script src="javascript/components/menu_item.js"></script>
+  <script src="javascript/components/menu_items.js"></script>
+  <script src="javascript/components/about.js"></script>
+  <script src="javascript/components/header-buts.js"></script>
+</body>
+
+</html>

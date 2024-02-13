@@ -1,6 +1,6 @@
 // load .env data into process.env
 require('dotenv').config();
-
+const path = require("path");
 
 // Web server config
 const sassMiddleware = require('./lib/sass-middleware');
@@ -17,7 +17,7 @@ app.set('view engine', 'ejs');
 // 'dev' = Concise output colored by response status for development use.
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan('dev'));
-app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "./public")));
 app.use(cookieSession({
   name: 'session',
   keys: ['catch22'],
@@ -56,10 +56,6 @@ app.use('/users', usersRoutes);
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
-
-app.get('/', (req, res) => {
-  res.render('index');
-});
 
 app.get('/login/:id', (req, res) => {
   req.session.user_id = req.params.id;
