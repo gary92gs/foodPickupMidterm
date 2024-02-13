@@ -1,7 +1,6 @@
 $(() => {
   window.header = {};
   const $pageHeader = $('#page-header');
-
   function updateHeader() {
     let userLinks = `
     <div id="nav-alpha">

@@ -1,7 +1,6 @@
 $(() => {
   window.about = {};
   const $mainContainer = $('#main-content');
-  // const $navHeaderDiv = $("#nav-alpha").find(".nav-header");
 
   function getAboutPage() {
     menuItems.clear();
@@ -11,7 +10,6 @@ $(() => {
         </div>
       `;
       $mainContainer.append(aboutHTML);
-      $menuWrapper.append(aboutHTML);
   }
   window.about.getAboutPage = getAboutPage;
 

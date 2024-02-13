@@ -32,7 +32,6 @@ app.use(
     isSass: false, // false => scss, true => sass
   })
 );
-app.use(express.static('public'));
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own

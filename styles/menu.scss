@@ -30,11 +30,23 @@
   border-radius: 15%;
 
   img {
-    max-width: 50%;
-    max-height: 40%;
+    max-width: 200px;
+    max-height: 200px;
     border: solid 1px black;
     border-radius: 10px;
   }
+
+  .added-to-cart-msg {
+    padding: 5px 5px;
+    border: solid 1px black;
+    font-size: 2em;
+    position: fixed;
+    top: 225px;
+    right: 45%;
+    left: 45%;
+    background-color: red;
+  }
+
 }
 
 
