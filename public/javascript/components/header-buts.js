@@ -18,3 +18,7 @@ $(document).on('click', '#about-but', function() {
 $(document).on('click', '#cart-but', function() {
   cart.createCartPage();
 });
+
+$(document).on('click', '#orders-but', function() {
+  orders.getOrdersPage();
+});
