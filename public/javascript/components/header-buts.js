@@ -3,6 +3,8 @@
 
   const $menuBut = $('#menu-but');
   const $aboutBut = $('#about-but');
+  const $cartBut = $('#cart-but');
+
 
   $menuBut.on("click", function() {
     getAllMenuItems()
@@ -17,5 +19,9 @@
 
   $aboutBut.on("click", function() {
     about.getAboutPage();
+  });
+
+  $cartBut.on("click", function() {
+    cart.createCartPage();
   });
 });

@@ -10,8 +10,10 @@
       }
     }
 
+    const mealName = $(this).siblings('h2').text();
     const mealContainer = $(this).closest('.meal');
     const meal_id = $(this).closest('.meal').data('meal_id');
+    const mealPrice = $(this).siblings('p[data-price]').data('price');
     const existingCartItemIndex = window.orderObj.cart_items.findIndex(item => item.meal_id === meal_id);
 
 
@@ -23,7 +25,9 @@
     // Add new item to cart if it doesn't exist
     window.orderObj.cart_items.push({
       meal_id: meal_id,
-      quantity: 1
+      quantity: 1,
+      meal_name: mealName,
+      price: mealPrice
     });
   }
 
