@@ -1,0 +1,28 @@
+.nav-header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.nav-header div {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.nav-header div button {
+  margin: 1% 0%;
+}
+
+#button-nav {
+  background-color: #F2E8CF;
+}
+
+#page-header {
+  width: 100%;
+}
+
+.page-header {
+  width: 100%;
+}
+
+/*# sourceMappingURL=header.css.map */

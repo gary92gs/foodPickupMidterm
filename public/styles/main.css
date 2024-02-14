@@ -1,0 +1,15 @@
+body {
+  background-color: white;
+}
+
+#main-content {
+  padding-top: 145px;
+  width: 90%;
+  margin: 0 5%;
+}
+
+.std-border {
+  border: solid 2px black;
+}
+
+/*# sourceMappingURL=main.css.map */
