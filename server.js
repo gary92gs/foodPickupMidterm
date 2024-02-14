@@ -3,7 +3,7 @@ require('dotenv').config();
 const path = require("path");
 
 // Web server config
-const sassMiddleware = require('./lib/sass-middleware');
+//const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
 const cookieSession = require('cookie-session');
