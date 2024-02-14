@@ -3,6 +3,7 @@
 
   const $menuBut = $('#menu-but');
   const $aboutBut = $('#about-but');
+  const $cartBut = $('#cart-but');
 
   $menuBut.on("click", function() {
     getAllMenuItems()
@@ -18,4 +19,12 @@
   $aboutBut.on("click", function() {
     about.getAboutPage();
   });
+
+  //load the cart html when the cart but is clicked
+  $cartBut.on("click", function() {
+    console.log('button clicked');
+    console.log(window.cart);
+    //cart.getCartPage();
+  });
+
 });
