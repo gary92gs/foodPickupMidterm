@@ -5,13 +5,18 @@ function getAllMenuItems() {
   });
 };
 
-// // Get cookie iD
+// Get cookie iD
 // function getCurrentID () {
-//   let url = "/";
+//   return new Promise((resolve, reject) => {
+//   element
+//   })
+//   let url = "/login";
 //   return $.ajax({
-//     url,
+//     url: url,
+//     method: 'POST',
+//     data: { user_id: req.session.user_id },
 //     success: function(response) {
-//       // console.log(Current user ID)
+//       const userID = response.user_id;
 //     }
 //   })
 // }

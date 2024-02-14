@@ -61,10 +61,17 @@ app.use('/users', usersRoutes);
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
+
+// Set our Id
 app.get('/login/:id', (req, res) => {
   req.session.user_id = req.params.id;
   res.redirect('/');
 });
+
+// // Used for retrieving ID
+// app.post('/login/', (req, res) => {
+//   res.redirect('/');
+// });
 
 app.get('/logout', (req, res) => {
   req.session = null;

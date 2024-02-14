@@ -1,3 +1,4 @@
+// On click functions for header menu
 $(document).on('click', '#menu-but', function() {
   getAllMenuItems()
   .then((json) => {
