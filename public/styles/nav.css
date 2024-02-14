@@ -22,14 +22,14 @@ nav .left-nav {
 nav .left-nav h1 {
   flex-direction: column;
   justify-content: center;
-<<<<<<< HEAD
+
   color: #386641;
   text-wrap: nowrap;
   font-family:'optima';
-  color: red;
+
   text-wrap: nowrap;
->>>>>>> features/index_css
-  justify-content: center;
+
+
   margin-left: 3%;
 }
 nav .right-nav {
