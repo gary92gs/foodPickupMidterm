@@ -9,7 +9,6 @@ $(() => {
             <img src="${meal.image_url}">
           </div>
         <div data-meal_id="${meal.meal_id}" class="meal">
-          <img src="${meal.image_url}">
           <h2>${meal.name}</h2>
           <p>${meal.description}</p>
           <p data-price="${meal.price}">Price: ${meal.price}</p>

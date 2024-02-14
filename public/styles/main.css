@@ -1,10 +1,5 @@
 body {
-<<<<<<< HEAD
   background-color: #F2E8CF;
-=======
-  background-color: white;
-  padding-bottom: 50px;
->>>>>>> features/index_css
 }
 
 #main-content {
@@ -14,11 +9,7 @@ body {
 }
 
 .std-border {
-<<<<<<< HEAD
   border-top: solid 2px #6A994E;
-=======
-  border: solid 2px black;
->>>>>>> features/index_css
 }
 
 /*# sourceMappingURL=main.css.map */
