@@ -20,7 +20,7 @@ $(document).on('click', '.edit-cart-quan', function() {
           console.log("Invalid index or item not found in the cart_items array.");
       }
   } else {
-      console.log("Invalid quantity.");
+      alert("Invalid quantity.");
   }
 });
 
@@ -39,3 +39,17 @@ $(document).on('click', '.remove-cart-item', function() {
       console.log("Item not found in the cart_items array.");
   }
 });
+
+
+// Checkout button logic
+$(document).on('click', '#checkout-but', function() {
+  //set placed at time
+  let currentTime = new Date();
+  window.orderObj.placed_at = currentTime.toISOString();
+  // console.log(window.orderObj);
+  addOrder(window.orderObj);
+  // Function to send text to owner!
+  // addOrder(FULL orderObj)
+});
+
+

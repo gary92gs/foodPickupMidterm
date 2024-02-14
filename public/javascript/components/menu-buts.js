@@ -38,8 +38,6 @@
       mealContainer.find('.added-to-cart-msg').remove();
     }, 1000);
 
-    console.log(window.orderObj);
-
   });
 
 
