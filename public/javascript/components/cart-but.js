@@ -52,7 +52,6 @@ $(document).on('click', '#checkout-but', function() {
     // Cleanup clear divs and reset cart
     menuItems.clear();
     window.orderObj.cart_items = [];
-    console.log(results);
     const $mainContainer = $('#main-content');
     const placedAt = new Date(results.placed_at);
     const formattedPlacedAt = new Intl.DateTimeFormat('en-US', {

@@ -19,7 +19,6 @@ $(() => {
 
   }
   window.cart.getCartPage = getCartPage;
-  console.log(window.cart);
   function createCartPage() {
     menuItems.clear();
     $cartWrapper = $('<div>').addClass('cart');

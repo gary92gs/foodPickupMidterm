@@ -31,3 +31,42 @@ function addOrder(order) {
     data: JSON.stringify(order)
   })
 };
+
+function sendLogout() {
+  $.ajax({
+    url: '/logout',
+    method: 'GET',
+    success: function(data, textStatus, xhr) {
+      console.log(xhr.status);
+      if (xhr.status === 200) {
+        // Redirect to the location specified in the response header
+        window.location.href = '/';
+      } else {
+        // Handle other successful responses as needed
+        console.log('Logout successful.');
+      }
+    },
+    error: function(xhr, textStatus, errorThrown) {
+      // Handle errors if any
+      console.error('Logout failed:', errorThrown);
+    }
+  });
+}
+
+// 2 is just a regular user
+function sendLogin() {
+  return $.ajax({
+    url: '/login/2',
+    method: 'GET',
+    success: function(data, textStatus, xhr) {
+      console.log(xhr.status);
+      if (xhr.status === 200) {
+        // Redirect to the location specified in the response header
+        window.location.href = '/';
+      } else {
+        // Handle other successful responses as needed
+        console.log('Login successful.');
+      }
+    },
+  });
+}

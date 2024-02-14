@@ -1,7 +1,5 @@
 $(() => {
   window.menuItem = {};
-  // const $mainContainer = $('#main-content')
-
   function listMenuItem(meal) {
   let mealLayout = `
         <div class="meal">

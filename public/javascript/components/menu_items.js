@@ -2,8 +2,6 @@ $(() => {
   window.menuItems = {}
   const $mainContainer = $('#main-content');
 
-  // const $navContainer = $('#page-header').find('#nav-alpha');
-
   const $menuWrapper = $('<div>').addClass('menu');
 
   const $navWrapper = $('<div>').addClass('nav-header');
@@ -31,7 +29,6 @@ $(() => {
       <button id="drink-but" type="submit">DRINKS</button>
     </div>
   `;
-    console.log($navContainer);
     $navWrapper.html(menuLinks);
     $navContainer.append($navWrapper);
 
