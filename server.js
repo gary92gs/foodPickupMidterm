@@ -24,11 +24,6 @@ app.use(cookieSession({
 }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-<<<<<<< HEAD
-
-app.use(express.static('public'));
-=======
->>>>>>> features/index_css
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own

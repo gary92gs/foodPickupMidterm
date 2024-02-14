@@ -81,13 +81,6 @@ const addOrder = (order) => {
     dbOrder = orderResult.rows[0];
     const orderId = dbOrder.id;
 
-<<<<<<< HEAD
-    const promise = db.query(`
-    INSERT INTO cart_items (order_id, menu_item_id, quantity)
-    VALUES ($1, $2, $3)
-    RETURNING *;
-  `,[orderId, cartItem, cartItem])
-=======
     // Cart loop
     const cartItemPromises = order.cart_items.map(cartItem => {
       return db.query(`
@@ -95,7 +88,6 @@ const addOrder = (order) => {
         VALUES ($1, $2, $3);
       `, [orderId, cartItem.meal_id, cartItem.quantity]);
     });
->>>>>>> features/index_css
 
     return Promise.all(cartItemPromises);
 
