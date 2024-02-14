@@ -6,8 +6,8 @@ $(() => {
   function getAboutPage() {
     menuItems.clear();
     let aboutHTML = `
-        <div>
-          <h1>I am an about Page!</h1>
+        <div class="about-header">
+          <img
         </div>
       `;
       $mainContainer.append(aboutHTML);
