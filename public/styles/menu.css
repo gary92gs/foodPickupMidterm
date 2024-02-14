@@ -49,8 +49,20 @@
   border-radius: 10px;
 }
 
+.meal .added-to-cart-msg {
+  padding: 5px 5px;
+  border: solid 1px black;
+  font-size: 2em;
+  position: fixed;
+  top: 225px;
+  right: 45%;
+  left: 45%;
+  background-color: red;
+}
+
 #header-img img {
   width: 100%;
 }
+
 
 /*# sourceMappingURL=menu.css.map */

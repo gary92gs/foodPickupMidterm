@@ -18,3 +18,5 @@ $(document).on('click', '#about-but', function() {
 $(document).on('click', '#cart-but', function() {
   cart.createCartPage();
 });
+
+
