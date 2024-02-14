@@ -8,7 +8,11 @@
 
 nav {
   width: 100%;
+<<<<<<< HEAD
   background-color: #6A994E;
+=======
+  background-color: white;
+>>>>>>> features/index_css
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -22,9 +26,14 @@ nav .left-nav {
 nav .left-nav h1 {
   flex-direction: column;
   justify-content: center;
+<<<<<<< HEAD
   color: #386641;
   text-wrap: nowrap;
   font-family:'optima';
+=======
+  color: red;
+  text-wrap: nowrap;
+>>>>>>> features/index_css
 }
 nav .left-nav p {
   display: flex;
@@ -40,7 +49,11 @@ nav .right-nav {
 nav .right-nav button {
   background-color: transparent;
   border: none;
+<<<<<<< HEAD
   color: #386641;
+=======
+  color: red;
+>>>>>>> features/index_css
   font-size: 2em;
 }
 

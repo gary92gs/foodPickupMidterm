@@ -34,14 +34,14 @@ router.get('/', (req, res) => {
 //req.body
 
 router.post('/', (req, res) => {
-  console.log(req.body);
   //grab the order info
   const order = req.body
-  order.user_id = 1;
+  // order.user_id = 1;
+
 
   orderQueries.addOrder(order)
     .then((order) => {
-      req.session.orderId = order.id;
+      // req.session.orderId = order.id;
       res.json(order);
     })
     .catch(error => {

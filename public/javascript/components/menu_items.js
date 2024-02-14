@@ -82,5 +82,4 @@ $(() => {
 
   window.menuItems.listMenuItems = listMenuItems;
   window.menuItems.clear = clearMenuItems;
-
 });

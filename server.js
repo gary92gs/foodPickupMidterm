@@ -24,8 +24,11 @@ app.use(cookieSession({
 }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+<<<<<<< HEAD
 
 app.use(express.static('public'));
+=======
+>>>>>>> features/index_css
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
@@ -55,10 +58,22 @@ app.use('/users', usersRoutes);
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
+
+// Set our Id
 app.get('/login/:id', (req, res) => {
   req.session.user_id = req.params.id;
   res.redirect('/');
 });
+
+// // Used for retrieving ID
+// app.post('/login/', (req, res) => {
+//   res.redirect('/');
+// });
+
+app.get('/logout', (req, res) => {
+  req.session = null;
+  res.redirect('/');
+})
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

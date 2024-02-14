@@ -73,34 +73,41 @@ const addOrder = (order) => {
   let dbOrder = null;
 
   return db.query(`
-  INSERT INTO orders (user_id, total_cost, placed_at, accepted_at, completed_at)
-  VALUES ($1, $2, $3, $4, $5)
+  INSERT INTO orders (user_id, total_cost, placed_at)
+  VALUES ($1, $2, $3)
   RETURNING *;
-  `,[order.user_id, order.total_cost, order.placed_at, order.accepted_at, order.completed_at])
-  .then((result) => {
-    dbOrder = result.rows[0];
-    const orderId = result.rows[0].id;
-    const promises = [];
-    for (const cartItem of order.cartItems) {
+  `,[order.user_id, order.total_cost, order.placed_at])
+  .then((orderResult) => {
+    dbOrder = orderResult.rows[0];
+    const orderId = dbOrder.id;
 
+<<<<<<< HEAD
     const promise = db.query(`
     INSERT INTO cart_items (order_id, menu_item_id, quantity)
     VALUES ($1, $2, $3)
     RETURNING *;
   `,[orderId, cartItem, cartItem])
+=======
+    // Cart loop
+    const cartItemPromises = order.cart_items.map(cartItem => {
+      return db.query(`
+        INSERT INTO cart_items (order_id, menu_item_id, quantity)
+        VALUES ($1, $2, $3);
+      `, [orderId, cartItem.meal_id, cartItem.quantity]);
+    });
+>>>>>>> features/index_css
 
-    promises.push(promise);
-    }
-    return Promise.all(promises);
+    return Promise.all(cartItemPromises);
 
   })
-  .then((result) => {
-    console.log(result);
+  .then(() => {
+    console.log('Order and cart items inserted successfully:', dbOrder);
     return dbOrder;
-    //order consfrimation page - or order is confirmed!
+  })
+  .catch((error) => {
+    console.error('Error inserting order and cart items:', error);
+    throw error; // Propagate the error to the caller
   });
-
-
 };
 
 module.exports = { getOrders, getOrderWithUserId, deleteOrder, addOrder };
