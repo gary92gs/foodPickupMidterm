@@ -24,14 +24,6 @@ app.use(cookieSession({
 }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(
-  '/styles',
-  sassMiddleware({
-    source: __dirname + '/styles',
-    destination: __dirname + '/public/styles',
-    isSass: false, // false => scss, true => sass
-  })
-);
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own

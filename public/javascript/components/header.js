@@ -2,7 +2,7 @@ $(() => {
   window.header = {};
   const $pageHeader = $('#page-header');
   function updateHeader() {
-    const userid = req.session.user_id;
+    // const userid = req.session.user_id;
     let userLinks = `
     <div id="nav-alpha">
         <nav class="nav-container">

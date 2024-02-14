@@ -1,0 +1,52 @@
+.menu {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.menu h1 {
+  flex-basis: 90%; /* Header takes up the full width */
+  background-color: #ccc;
+  padding: 1%;
+  text-align: center;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.meal-cat {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap into multiple lines */
+  gap: 10px; /* Adjust the gap between grid items */
+}
+
+.meal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-basis: calc(33.33% - 10px); /* Set the initial size of each item to 33.33% of the container width minus the gap */
+  background-color: #f0f0f0;
+  text-align: center;
+  border-radius: 15%;
+}
+.meal img {
+  max-width: 200px;
+  max-height: 200px;
+  border: solid 1px black;
+  border-radius: 10px;
+}
+.meal .added-to-cart-msg {
+  padding: 5px 5px;
+  border: solid 1px black;
+  font-size: 2em;
+  position: fixed;
+  top: 225px;
+  right: 45%;
+  left: 45%;
+  background-color: red;
+}
+
+#header-img img {
+  width: 100%;
+}
+
+/*# sourceMappingURL=menu.css.map */
