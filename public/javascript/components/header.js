@@ -11,9 +11,9 @@ $(() => {
           <p>PlaceHolder Icon</p>
         </section>
         <section class="right-nav">
-          <button id="about-but" type="submit">ABOUT</button>
-          <button id="menu-but" type="submit">MENU</button>
-          <button id="cart-but" type="submit">CART</button>
+          <button id="about-but" class="button-col" type="submit">ABOUT</button>
+          <button id="menu-but" class="button-col" type="submit">MENU</button>
+          <button id="cart-but" class="button-col" type="submit">CART</button>
           <button type="submit">Order for Pickup</button>
         </section>
       </nav>

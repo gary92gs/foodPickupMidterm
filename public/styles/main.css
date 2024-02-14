@@ -1,5 +1,5 @@
 body {
-  background-color: white;
+  background-color: #F2E8CF;
 }
 
 #main-content {
@@ -9,7 +9,7 @@ body {
 }
 
 .std-border {
-  border: solid 2px black;
+  border-top: solid 2px #6A994E;
 }
 
 /*# sourceMappingURL=main.css.map */

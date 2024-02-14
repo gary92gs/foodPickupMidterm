@@ -20,17 +20,20 @@
   gap: 10px;
   /* Adjust the gap between grid items */
 }
+.meal-cat h1 {
+  background-color: #A7C957;
+}
 
 .meal {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-basis: calc(33.33% - 10px);
   /* Set the initial size of each item to 33.33% of the container width minus the gap */
   background-color: #f0f0f0;
   text-align: center;
-  border-radius: 15%;
+  /* border-radius: 15%; */
 }
 .meal img {
   max-width: 50%;
