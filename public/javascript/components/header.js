@@ -8,7 +8,7 @@ $(() => {
         <nav class="nav-container">
           <section class="left-nav">
           <h1>THE CULPRIT'S KITCHEN</h1>
-          <p><i class="fa-solid fa-truck-fast"></i></p?
+          <p><i class="fa-solid fa-truck-fast"></i></p>
         </section>
         <section class="right-nav">
           <button id="about-but" class="button-col" type="submit">ABOUT</button>
