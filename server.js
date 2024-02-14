@@ -60,10 +60,10 @@ app.get('/login/:id', (req, res) => {
   res.redirect('/');
 });
 
-// // Used for retrieving ID
-// app.post('/login/', (req, res) => {
-//   res.redirect('/');
-// });
+// Used for retrieving ID
+app.get('/getUserId', (req, res) => {
+  res.json({ user_id: req.session.user_id });
+});
 
 app.get('/logout', (req, res) => {
   req.session = null;

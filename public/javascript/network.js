@@ -6,20 +6,21 @@ function getAllMenuItems() {
 };
 
 // Get cookie iD
-// function getCurrentID () {
-//   return new Promise((resolve, reject) => {
-//   element
-//   })
-//   let url = "/login";
-//   return $.ajax({
-//     url: url,
-//     method: 'POST',
-//     data: { user_id: req.session.user_id },
-//     success: function(response) {
-//       const userID = response.user_id;
-//     }
-//   })
-// }
+function getCurrentID () {
+  return new Promise((resolve, reject) => {
+    $.ajax({
+      url: '/getUserId',
+      method: 'GET',
+      success: function(response) {
+        const userID = response.user_id;
+        resolve(userID);
+      },
+      error: function(err) {
+        reject(err);
+      }
+    });
+  });
+}
 
 function addOrder(order) {
   let url = "/api/orders";
