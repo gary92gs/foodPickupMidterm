@@ -100,21 +100,6 @@ const addOrder = (order) => {
     console.error('Error inserting order and cart items:', error);
     throw error; // Propagate the error to the caller
   });
-  // .then((result) => {
-  //   console.log(result);
-  //   return dbOrder;
-  //   //order consfrimation page - or order is confirmed!
-  // });
-
-
 };
 
 module.exports = { getOrders, getOrderWithUserId, deleteOrder, addOrder };
-
-
-// return db.query(`
-// INSERT INTO orders (user_id, total_cost, placed_at, accepted_at, completed_at)
-// VALUES ($1, $2, $3, $4, $5)
-// RETURNING *;
-// `,[order.user_id, order.total_cost, order.placed_at, order.accepted_at, order.completed_at])
-// // .then((result) => {

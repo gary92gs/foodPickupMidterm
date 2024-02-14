@@ -1,27 +1,19 @@
-  // Clicking menu does the same as loading into the page
-  $(() => {
+$(document).on('click', '#menu-but', function() {
+  getAllMenuItems()
+  .then((json) => {
+    menuItems.listMenuItems(json.meals)
 
-  const $menuBut = $('#menu-but');
-  const $aboutBut = $('#about-but');
-  const $cartBut = $('#cart-but');
-
-
-  $menuBut.on("click", function() {
-    getAllMenuItems()
-    .then((json) => {
-      menuItems.listMenuItems(json.meals)
-
-    })
-    .catch((error) => {
-      console.error('Error fetching menu items:', error);
-    });
+  })
+  .catch((error) => {
+    console.error('Error fetching menu items:', error);
   });
+});
 
-  $aboutBut.on("click", function() {
-    about.getAboutPage();
-  });
+$(document).on('click', '#about-but', function() {
+  about.getAboutPage();
+});
 
-  $cartBut.on("click", function() {
-    cart.createCartPage();
-  });
+
+$(document).on('click', '#cart-but', function() {
+  cart.createCartPage();
 });
