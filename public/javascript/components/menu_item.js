@@ -5,7 +5,9 @@ $(() => {
   function listMenuItem(meal) {
   let mealLayout = `
         <div class="meal">
-          <img src="${meal.image_url}">
+          <div class="meal-img-container">
+            <img src="${meal.image_url}">
+          </div>
           <h2>${meal.name}</h2>
           <p>${meal.description}</p>
           <p>Price: ${meal.price}</p>
