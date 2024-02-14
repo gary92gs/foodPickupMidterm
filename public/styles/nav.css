@@ -24,6 +24,7 @@ nav .left-nav h1 {
   justify-content: center;
   color: #386641;
   text-wrap: nowrap;
+  font-family:'optima';
 }
 nav .left-nav p {
   display: flex;
