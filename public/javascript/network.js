@@ -5,6 +5,14 @@ function getAllMenuItems() {
   });
 };
 
+function getOrders() {
+  let url = "/api/orders/all";
+  return $.ajax({
+    url: url,
+    method: "GET"
+  })
+};
+
 // Get cookie iD
 // function getCurrentID () {
 //   return new Promise((resolve, reject) => {
