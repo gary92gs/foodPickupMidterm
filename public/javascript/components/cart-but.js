@@ -47,9 +47,34 @@ $(document).on('click', '#checkout-but', function() {
   let currentTime = new Date();
   window.orderObj.placed_at = currentTime.toISOString();
   // console.log(window.orderObj);
-  addOrder(window.orderObj);
-  // Function to send text to owner!
-  // addOrder(FULL orderObj)
+  addOrder(window.orderObj)
+  .then((results) => {
+    // Cleanup clear divs and reset cart
+    menuItems.clear();
+    window.orderObj.cart_items = [];
+    console.log(results);
+    const $mainContainer = $('#main-content');
+    const placedAt = new Date(results.placed_at);
+    const formattedPlacedAt = new Intl.DateTimeFormat('en-US', {
+      dateStyle: 'medium',
+      timeStyle: 'short',
+    }).format(placedAt);
+
+    $mainContainer.append(`
+      <div>
+        <h1>Your order has been placed at ${formattedPlacedAt}!</h1>
+        <p> Your order # is: ${results.id}</p>
+      </div>
+    `)
+  })
+
+  // // Cleanup clear divs and reset cart
+  // menuItems.clear();
+  // window.orderObj.cart_items = [];
+  // // Function to send text to owner!
+  // const $mainContainer = $('#main-content');
+  // $mainContainer.append(`
+  // `)
 });
 
 
