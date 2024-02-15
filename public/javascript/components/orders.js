@@ -28,10 +28,10 @@ $(() => {
     <header>
       <div class="order-info">
         <div class="order-id">
-          <h3>${order.user_id}</h3>
-          <h3>${order.id}</h3>
-          <h3>${order.total_cost}</h3>
-          <h3>${order.placed_at}</h3>
+          <h3>Order by: ${order.username}</h3>
+          <h3>Order ID: ${order.id}</h3>
+          <h3>Total Cost: ${order.total_cost}</h3>
+          <h3>Placed at: ${order.placed_at}</h3>
         </div>
 
         <div>
@@ -44,8 +44,22 @@ $(() => {
     </footer>
   </article>
     `);
+    //convert timestamp to pst
+    const storedDate = new Date(order.placed_at);
+
+    // Calculate the time difference between UTC and PST in milliseconds (PST is UTC - 8 hours)
+    const offsetMs = -8 * 60 * 60 * 1000;
+
+    // Apply the offset to the stored date to convert it to PST
+    const pstDate = new Date(storedDate.getTime() + offsetMs);
+
+    // Format the PST date as desired
+    const options = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true};
+    const pstDateString = pstDate.toLocaleString('en-US', options);
+
+
     //attach this original object to this jquery element
-    $order.data("obj", order);
+    // $order.data("obj", order);
     return $order;
   };
 
@@ -75,10 +89,6 @@ $(() => {
     }
 
   }
-
-
-
-
 
   window.orders.renderOrders = renderOrders;
   window.orders.createOrder = createOrderElement;

@@ -10,10 +10,33 @@
 }
 
 .order-info {
-  border: black solid 2px;
+  border: #BC4749 solid 2px;
   text-align: center;
+  padding: 10px;
 }
 
+#orders-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content:space-around;
+}
+
+.order {
+  margin-bottom: 10px;
+  background-color: #F2E8CF;
+  color: #BC4749;
+}
+
+#accept-but {
+  background-color: #A7C957;
+  color: black;
+}
 /* .order :hover {
   box-shadow:10px 10px 3px #545149;
 } */
+
+#accept-but :hover {
+  box-shadow:10px 10px 3px #545149;
+}
