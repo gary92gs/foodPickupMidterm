@@ -32,7 +32,7 @@ const getOrders = () => {
   JOIN users ON user_id = users.id
   JOIN cart_items ON order_id = orders.id
   JOIN menu_items ON menu_item_id = menu_items.id
-  ORDER BY orders.id;
+  ORDER BY orders.id DESC;
 
   `)
   .then((result) => {
