@@ -33,10 +33,11 @@
   background-color: #A7C957;
   color: black;
 }
-/* .order :hover {
+/* #orders-list :hover {
   box-shadow:10px 10px 3px #545149;
 } */
 
-#accept-but :hover {
-  box-shadow:10px 10px 3px #545149;
+#accept-but:hover {
+  box-shadow:3px 3px 3px #545149;
+  background-color:#6A994E ;
 }
