@@ -30,8 +30,11 @@ $(() => {
           <h3>${order.placed_at}</h3>
           <h3>${order.accepted_at}</h3>
           h3>${order.completed_at}</h3>
-      <div>
-
+        </div>
+        <div>
+          <button id="order-but" type="submit">Accept</button>
+          <button id="order-but" type="submit">Complete</button>
+        </div>
       </div>
     </header>
     <footer>
