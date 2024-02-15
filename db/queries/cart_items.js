@@ -13,6 +13,7 @@ const getCartItems = (orderId) => {
   SELECT *
   FROM cart_items
   JOIN orders ON order_id = orders.id
+  JOIN menu_items ON menu_item_id = menu_items.id
   WHERE order_id = $1;
   `, [orderId])
   .then((result) => {

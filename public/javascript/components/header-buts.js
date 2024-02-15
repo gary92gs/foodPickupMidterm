@@ -31,6 +31,7 @@ $(document).on('click', '#login-but', function() {
 $(document).on('click', '#orders-but', function() {
   getAllOrders()
   .then((json) => {
-    orders.loadOrders(json.orders);
+    orders.renderOrders(json.orders);
   })
+
 });

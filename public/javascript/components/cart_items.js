@@ -1,87 +1,72 @@
-$(() => {
-  window.cartItems = {};
-  const $mainContainer = $('#main-content');
+// $(() => {
+//   window.cartItems = {};
+//   const $mainContainer = $('#main-content');
 
-  // function getOrdersPage() {
-  //   menuItems.clear();
-  //   let ordersHTML = `
-  //         <div id="orders-img-container">
-  //           <img src="/images/orders.jpg">
-  //         </div>
-  //         <p> <p>
-  //         <div class="about-header">
-  //       </div>
-  //       <section>
-  //       <div id="orders-list"></div>
-  //       </section>
-  //     `;
-  //     $mainContainer.append(ordersHTML);
-  // }
+//   // function getOrdersPage() {
+//   //   menuItems.clear();
+//   //   let ordersHTML = `
+//   //         <div id="orders-img-container">
+//   //           <img src="/images/orders.jpg">
+//   //         </div>
+//   //         <p> <p>
+//   //         <div class="about-header">
+//   //       </div>
+//   //       <section>
+//   //       <div id="orders-list"></div>
+//   //       </section>
+//   //     `;
+//   //     $mainContainer.append(ordersHTML);
+//   // }
 
-  function createCartItems(orderId) {
-    const $order = $(`
-    <article class="order">
-    <header>
-      <div class="order-info">
-        <div class="order-id">
-          <h3>${order.user_id}</h3>
-          <h3>${order.id}</h3>
-          <h3>${order.total_cost}</h3>
-          <h3>${order.placed_at}</h3>
-          <h3>${order.accepted_at}</h3>
-          h3>${order.completed_at}</h3>
-        </div>
-        <div>
-          <button id="order-but" type="submit">Accept</button>
-          <button id="order-but" type="submit">Complete</button>
-        </div>
-      </div>
-    </header>
-    <footer>
-    </footer>
-  </article>
-    `);
-    console.log(order.username);
-    return $order;
+//   function createCartItems(cartItems) {
+//     const $cartItems = $(`
 
-  };
+//           <h3>${cartItems.id}</h3>
+//           <h3>${cartItems.quantity}</h3>
+//           <h3>${cartItems.name}</h3>
+//           <h3>${cartItems.price}</h3>
 
-  function displayOrders(orders) {
+//     `);
+
+//     return $cartItems;
+
+//   };
+
+//   function displayCartItems(cartItems) {
 
 
-    // Element within orders page to hold the list of orders
-    const $ordersList = $('#orders-list');
+//     // Element within orders page to hold the list of orders
+//     const $cartItemsList = $('#cart-items-list');
 
-    // clear previous content
-    $ordersList.empty();
-
-
-    for (const orderId in orders) {
-      const order = orders[orderId];
-
-      console.log('orderid', orderId);
-      console.log('orders Object', orders);
-      const $order = createOrder(order);
-      console.log('$order', $order);
+//     // clear previous content
+//     $cartItemsList.empty();
 
 
-      // Append the order to the list
-      $ordersList.append($order);
+//     for (const cartItemId in cartItems) {
+//       const cartItem = cartItems[cartItemId];
 
-    }
-
-  }
-
-  function loadOrders(orders) {
-    getOrdersPage();
-
-    displayOrders(orders);
-  }
+//       console.log('cartItemId', cartItemId);
+//       console.log('cart items Object', cartItems);
+//       const $cartItem = createCartItems(cartItem);
 
 
-  window.orders.getOrdersPage = getOrdersPage;
-  window.orders.displayOrders = displayOrders;
-  window.orders.loadOrders = loadOrders;
-  window.orders.createOrder = createOrder;
 
-});
+//       // Append the cart item to the list
+//       $cartItemsList.append($cartItem);
+
+//     }
+
+//   }
+
+//   function loadCartItems(cartItems) {
+
+//     displayCartItems(cartItems);
+//   }
+
+
+//   window.cartItems.createCartItems = createCartItems;
+//   window.cartItems.displayCartItems = displayCartItems;
+//   window.cartItems.loadCartItems = loadCartItems;
+
+
+// });

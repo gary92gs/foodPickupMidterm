@@ -9,5 +9,13 @@ $(document).ready(function() {
       console.error('Error fetching menu items:', error);
     });
   })
+
+  $("#main-content").on("click", ".order", displayOrderCart)
 });
 
+// const displayOrderCart = function (){
+//   const order = $(this).data("obj")
+//   console.log(order);
+  //fetch cart for this order and render it
+
+// };

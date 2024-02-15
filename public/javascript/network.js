@@ -14,13 +14,10 @@ function getAllOrders() {
   });
 };
 
-//get all cart items in an order
-function getAllCartItems() {
-  let url = "/api/cart-items";
-  return $.ajax({
-    url: url,
-    method: "GET"
-  });
+//get all cart items for an order
+function getCartItems(id) {
+  let url = `/api/cart-items/${id}`;
+  return $.get( url );
 }
 
 // Get cookie iD
