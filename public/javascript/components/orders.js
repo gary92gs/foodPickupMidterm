@@ -32,9 +32,8 @@ $(() => {
           h3>${order.completed_at}</h3>
         </div>
         <div>
-          <button id="view-cart-but" type="submit">View Cart</button>
           <button id="accept-but" type="submit">Accept</button>
-          <button id="complete-but" type="submit">Complete</button>
+
         </div>
       </div>
     </header>
