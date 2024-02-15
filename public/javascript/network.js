@@ -5,12 +5,16 @@ function getAllMenuItems() {
   });
 };
 
-function getOrders() {
+function getAllOrders() {
   let url = "/api/orders/all";
   return $.ajax({
     url: url,
-    method: "GET"
-  })
+    method: "GET",
+    success: (orders) => {
+      console.log(orders);
+      loadOrders(orders);
+    },
+  });
 };
 
 // Get cookie iD

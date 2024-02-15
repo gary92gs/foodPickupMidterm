@@ -20,5 +20,8 @@ $(document).on('click', '#cart-but', function() {
 });
 
 $(document).on('click', '#orders-but', function() {
-  orders.getOrdersPage();
+  getAllOrders()
+  .then((json) => {
+    orders.loadOrders(json.orders);
+  })
 });

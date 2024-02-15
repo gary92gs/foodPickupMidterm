@@ -8,15 +8,78 @@ $(() => {
           <div id="orders-img-container">
             <img src="/images/orders.jpg">
           </div>
-          <p> Welcome to The Culprit's Kitchen, an enigmatic haven in the heart of Vancouver, where culinary mastery meets cinematic intrigue. Inspired by the timeless allure of 'The Usual Suspects,' our high-end restaurant invites you to embark on a gastronomic journey like no other.
-
-          Immerse yourself in an ambiance reminiscent of Keyser Söze's mysterious world, where our carefully curated menu unfolds a storyline through every dish. Our chefs, akin to directors, craft a symphony of flavors, while our attentive waitstaff play the roles of characters, ensuring your dining experience at The Culprit's Kitchen is nothing short of extraordinary. Indulge in rare wines, savor unexpected culinary revelations, and redefine your dining expectations with us. Welcome to a culinary experience where every meal is a masterpiece and every bite leaves you craving for more.<p>
+          <p> <p>
           <div class="about-header">
         </div>
+        <section>
+        <div id="orders-list"></div>
+        </section>
       `;
       $mainContainer.append(ordersHTML);
   }
+
+  function createOrder(order) {
+    const $order = $(`
+    <article class="order">
+    <header>
+      <div class="order-info">
+        <div class="order-id">
+          <h3>${order.username}</h3>
+          <h3>${order.id}</h3>
+        </div>
+        <h3>${order.name}</h3>
+      </div>
+      <div>
+        <p>${order.avg_prep_time_mins}</p>
+      </div>
+    </header>
+    <footer>
+    </footer>
+  </article>
+    `);
+    console.log(order.username);
+    return $order;
+
+  };
+
+  function displayOrders(orders) {
+
+
+    // Element within orders page to hold the list of orders
+    const $ordersList = $('#orders-list');
+
+    // clear previous content
+    $ordersList.empty();
+
+
+    for (const orderId in orders) {
+      const order = orders[orderId];
+
+      console.log('orderid', orderId);
+      console.log('orders Object', orders);
+      const $order = createOrder(order);
+      console.log('$order', $order);
+
+      // Construct an HTML string for the order - customize as needed
+      // const orderHtml = `<div class="order">${JSON.stringify(order, null, 2)}</div>`;
+      // Append the order to the list
+      $ordersList.append($order);
+
+    }
+
+  }
+
+  function loadOrders(orders) {
+    getOrdersPage();
+
+    displayOrders(orders);
+  }
+
+
   window.orders.getOrdersPage = getOrdersPage;
+  window.orders.displayOrders = displayOrders;
+  window.orders.loadOrders = loadOrders;
+  window.orders.createOrder = createOrder;
 
 });
 
