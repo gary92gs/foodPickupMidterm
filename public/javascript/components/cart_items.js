@@ -1,24 +1,24 @@
 $(() => {
-  window.orders = {};
+  window.cartItems = {};
   const $mainContainer = $('#main-content');
 
-  function getOrdersPage() {
-    menuItems.clear();
-    let ordersHTML = `
-          <div id="orders-img-container">
-            <img src="/images/orders.jpg">
-          </div>
-          <p> <p>
-          <div class="about-header">
-        </div>
-        <section>
-        <div id="orders-list"></div>
-        </section>
-      `;
-      $mainContainer.append(ordersHTML);
-  }
+  // function getOrdersPage() {
+  //   menuItems.clear();
+  //   let ordersHTML = `
+  //         <div id="orders-img-container">
+  //           <img src="/images/orders.jpg">
+  //         </div>
+  //         <p> <p>
+  //         <div class="about-header">
+  //       </div>
+  //       <section>
+  //       <div id="orders-list"></div>
+  //       </section>
+  //     `;
+  //     $mainContainer.append(ordersHTML);
+  // }
 
-  function createOrder(order) {
+  function createCartItems(orderId) {
     const $order = $(`
     <article class="order">
     <header>
@@ -32,9 +32,8 @@ $(() => {
           h3>${order.completed_at}</h3>
         </div>
         <div>
-          <button id="view-cart-but" type="submit">View Cart</button>
-          <button id="accept-but" type="submit">Accept</button>
-          <button id="complete-but" type="submit">Complete</button>
+          <button id="order-but" type="submit">Accept</button>
+          <button id="order-but" type="submit">Complete</button>
         </div>
       </div>
     </header>
@@ -65,8 +64,7 @@ $(() => {
       const $order = createOrder(order);
       console.log('$order', $order);
 
-      // Construct an HTML string for the order - customize as needed
-      // const orderHtml = `<div class="order">${JSON.stringify(order, null, 2)}</div>`;
+
       // Append the order to the list
       $ordersList.append($order);
 
@@ -87,4 +85,3 @@ $(() => {
   window.orders.createOrder = createOrder;
 
 });
-

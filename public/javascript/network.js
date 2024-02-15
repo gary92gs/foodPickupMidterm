@@ -15,7 +15,7 @@ function getAllOrders() {
 };
 
 //get all cart items in an order
-function getCartItems(orderId) {
+function getAllCartItems() {
   let url = "/api/cart-items";
   return $.ajax({
     url: url,
