@@ -17,7 +17,9 @@ nav {
 nav .left-nav {
   display: flex;
   flex-direction: row;
+  align-items: center;
   padding-left: 2%;
+
 }
 nav .left-nav h1 {
   flex-direction: column;
@@ -28,10 +30,13 @@ nav .left-nav h1 {
   font-family:'optima';
 
   text-wrap: nowrap;
-
-
   margin-left: 3%;
 }
+
+nav .left-nav i {
+  margin-left: 10px;
+}
+
 nav .right-nav {
   display: flex;
   flex-direction: row;

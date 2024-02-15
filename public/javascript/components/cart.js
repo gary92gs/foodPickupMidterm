@@ -5,7 +5,7 @@ $(() => {
   function createCartPage() {
     menuItems.clear();
     $cartWrapper = $('<div>').addClass('cart');
-    $cartWrapper.append('<h1>Order so far:<h1></h1>');
+    $cartWrapper.append('<div id="cart-head"><h1>Order so far:</h1></div>');
     let cartHTML;
     if (!window.orderObj || window.orderObj.cart_items.length === 0) {
       cartHTML = `
@@ -38,7 +38,7 @@ $(() => {
       window.orderObj.total_cost = parseFloat(totalCost);
 
       $mainContainer.append(`
-        <div>
+        <div id="checkout-div">
           <p>Total Cost: ${Math.round(totalCost * 100) / 100}</p>
           <button id="checkout-but">Checkout</button>
         </div>
