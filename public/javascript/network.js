@@ -10,12 +10,18 @@ function getAllOrders() {
   return $.ajax({
     url: url,
     method: "GET",
-    success: (orders) => {
-      console.log(orders);
-      loadOrders(orders);
-    },
+
   });
 };
+
+//get all cart items in an order
+function getCartItems(orderId) {
+  let url = "/api/cart-items";
+  return $.ajax({
+    url: url,
+    method: "GET"
+  });
+}
 
 // Get cookie iD
 // function getCurrentID () {
