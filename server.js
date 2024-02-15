@@ -2,6 +2,7 @@
 require('dotenv').config();
 const path = require("path");
 
+
 // Web server config
 //const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
@@ -28,6 +29,7 @@ app.use(express.static('public'));
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 
+const messageRoutes = require('./routes/messages');
 const mealApiRoutes = require('./routes/menu-items-api');
 const orderRoutes = require('./routes/orders-api');
 const cartItemsRoutes = require('./routes/cart_items-api');
@@ -46,6 +48,7 @@ app.use('/api/cart-items', cartItemsRoutes);
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
+app.use('/messages', messageRoutes)
 
 // Note: mount other resources here, using the same pattern above
 

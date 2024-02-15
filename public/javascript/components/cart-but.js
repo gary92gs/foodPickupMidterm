@@ -65,15 +65,10 @@ $(document).on('click', '#checkout-but', function() {
         <p> Your order # is: ${results.id}</p>
       </div>
     `)
+    window.orderObj.order_id = results.id;
+    sendMessage(`An order with the ID ${results.id} has been placed at ${formattedPlacedAt}`)
   })
 
-  // // Cleanup clear divs and reset cart
-  // menuItems.clear();
-  // window.orderObj.cart_items = [];
-  // // Function to send text to owner!
-  // const $mainContainer = $('#main-content');
-  // $mainContainer.append(`
-  // `)
 });
 
 

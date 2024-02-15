@@ -70,3 +70,25 @@ function sendLogin() {
     },
   });
 }
+
+
+// Send message route
+function sendMessage(body) {
+  const messageBody = body;
+
+  const from = '+12134631207';
+  const to = '+12508265312';
+
+  return $.ajax({
+    url: '/messages/send',
+    method: 'POST',
+    contentType: 'application/json',
+    data: JSON.stringify({ body: messageBody, from: from, to: to }),
+    success: function(response) {
+        console.log(response);
+    },
+    error: function(xhr, status, error) {
+        console.error(error);
+    }
+  });
+}
