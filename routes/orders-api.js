@@ -33,8 +33,8 @@ router.get('/', (req, res) => {
 //get the array of finalized cart items
 //req.body
 
-// EDIT route
-router.post('/:id', (req, res) => {
+
+router.post('/', (req, res) => {
   //grab the order info
   const order = req.body
   // order.user_id = 1;
