@@ -29,11 +29,11 @@ $(() => {
           <h3>${order.total_cost}</h3>
           <h3>${order.placed_at}</h3>
           <h3>${order.accepted_at}</h3>
-          h3>${order.completed_at}</h3>
+          <h3>${order.completed_at}</h3>
         </div>
         <div>
-          <button id="accept-but" type="submit">Accept</button>
-
+        <p>${order.is_active ? 'Order Accepted' : ''}</p>
+        ${order.is_active ? '' : '<button id="accept-but" type="submit">Accept</button>'}
         </div>
       </div>
     </header>
@@ -41,14 +41,14 @@ $(() => {
     </footer>
   </article>
     `);
-    console.log(order.username);
+    // console.log(order.username);
     return $order;
 
   };
 
   function displayOrders(orders) {
 
-
+    console.log(orders);
     // Element within orders page to hold the list of orders
     const $ordersList = $('#orders-list');
 
@@ -59,10 +59,10 @@ $(() => {
     for (const orderId in orders) {
       const order = orders[orderId];
 
-      console.log('orderid', orderId);
-      console.log('orders Object', orders);
+      // console.log('orderid', orderId);
+      // console.log('orders Object', orders);
       const $order = createOrder(order);
-      console.log('$order', $order);
+      // console.log('$order', $order);
 
       // Construct an HTML string for the order - customize as needed
       // const orderHtml = `<div class="order">${JSON.stringify(order, null, 2)}</div>`;

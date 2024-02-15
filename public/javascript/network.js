@@ -110,3 +110,11 @@ function sendMessage(body) {
     }
   });
 }
+
+function updateActiveOrder(orderId) {
+  let url = "/api/orders/" + orderId + "/isActive";
+  return $.ajax({
+    url: url,
+    method: "POST"
+  });
+}

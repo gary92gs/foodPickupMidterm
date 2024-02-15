@@ -27,11 +27,12 @@ const getOrderWithUserId = (userId) => {
 const getOrders = () => {
 
   return db.query(`
-  SELECT orders.id, orders.user_id, orders.total_cost, orders.placed_at, orders.accepted_at, orders.completed_at
+  SELECT DISTINCT orders.id, orders.user_id, orders.total_cost, orders.placed_at, orders.accepted_at, orders.completed_at, orders.is_active
   FROM orders
   JOIN users ON user_id = users.id
   JOIN cart_items ON order_id = orders.id
-  JOIN menu_items ON menu_item_id = menu_items.id;
+  JOIN menu_items ON menu_item_id = menu_items.id
+  ORDER BY orders.id;
 
   `)
   .then((result) => {
@@ -102,4 +103,19 @@ const addOrder = (order) => {
   });
 };
 
-module.exports = { getOrders, getOrderWithUserId, deleteOrder, addOrder };
+
+const updateOrderIsActive = (orderId) => {
+  console.log(orderId);
+  return db.query(`
+    UPDATE orders
+    SET is_active = TRUE
+    WHERE id = $1;
+  `, [orderId])
+  .then(() => {
+    return "Order is_active field updated successfully";
+  })
+  .catch((error) => {
+    return error;
+  });
+};
+module.exports = { getOrders, getOrderWithUserId, deleteOrder, addOrder, updateOrderIsActive };

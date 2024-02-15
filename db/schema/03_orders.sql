@@ -8,5 +8,5 @@ CREATE TABLE orders (
   accepted_at TIMESTAMP,
   completed_at TIMESTAMP,
 
-  is_active BOOLEAN NOT NULL DEFAULT TRUE
+  is_active BOOLEAN NOT NULL DEFAULT FALSE
 );
