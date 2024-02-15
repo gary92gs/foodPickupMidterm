@@ -1,0 +1,36 @@
+.cart {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-head {
+  display: flex;
+  justify-content: center;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  border: solid 2px black;
+}
+
+.cart-item p {
+  flex-shrink: 0;
+  width: 150px;
+  padding: 0 10px;
+}
+
+.cart-item button {
+  flex-shrink: 0;
+  padding: 8px 16px;
+}
+
+#checkout-div {
+  display: flex;
+  justify-content: center;
+}
+
+#checkout-div button {
+  margin-left: 10px;
+}

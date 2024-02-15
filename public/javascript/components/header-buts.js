@@ -17,6 +17,15 @@ $(document).on('click', '#about-but', function() {
 
 $(document).on('click', '#cart-but', function() {
   cart.createCartPage();
+
+});
+$(document).on('click', '#logout-but', function() {
+  sendLogout();
+});
+
+
+$(document).on('click', '#login-but', function() {
+  sendLogin();
 });
 
 $(document).on('click', '#orders-but', function() {

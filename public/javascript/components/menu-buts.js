@@ -1,44 +1,54 @@
-  $(document).on('click', '.add-cart-but', function() {
-    if (!window.orderObj) {
-      window.orderObj = {
-        user_id: 1,
-        // totalcost: 0,
-        // placed_at: 0,
-        // accepted_at: 0,
-        // completed_at: 0,
-        cart_items: [],
+$(document).on('click', '.add-cart-but', function() {
+  getCurrentID().then((userId) => {
+    if (!userId) {
+      const mealContainer = $(this).closest('.meal');
+      mealContainer.append(`<p class="added-to-cart-msg">Please Login to add to cart!</p>`);
+      setTimeout(function() {
+        mealContainer.find('.added-to-cart-msg').remove();
+      }, 1000);
+
+    } else {
+      if (!window.orderObj) {
+        window.orderObj = {
+          user_id: userId,
+          // totalcost: 0,
+          // placed_at: 0,
+          // accepted_at: 0,
+          // completed_at: 0,
+          cart_items: [],
+        }
       }
-    }
 
-    const mealName = $(this).siblings('h2').text();
-    const mealContainer = $(this).closest('.meal');
-    const meal_id = $(this).closest('.meal').data('meal_id');
-    const mealPrice = $(this).siblings('p[data-price]').data('price');
-    const existingCartItemIndex = window.orderObj.cart_items.findIndex(item => item.meal_id === meal_id);
-
+      const mealName = $(this).siblings('h2').text();
+      const mealContainer = $(this).closest('.meal');
+      const meal_id = $(this).closest('.meal').data('meal_id');
+      const mealPrice = $(this).siblings('p[data-price]').data('price');
+      const existingCartItemIndex = window.orderObj.cart_items.findIndex(item => item.meal_id === meal_id);
 
 
-  if (existingCartItemIndex !== -1) {
-    // Update quantity if item already exists in cart
-    window.orderObj.cart_items[existingCartItemIndex].quantity++;
-  } else {
-    // Add new item to cart if it doesn't exist
-    window.orderObj.cart_items.push({
-      meal_id: meal_id,
-      quantity: 1,
-      meal_name: mealName,
-      price: mealPrice
-    });
-  }
 
-    mealContainer.append(`<p class="added-to-cart-msg">Added to cart!</p>`);
+      if (existingCartItemIndex !== -1) {
+        // Update quantity if item already exists in cart
+        window.orderObj.cart_items[existingCartItemIndex].quantity++;
+      } else {
+        // Add new item to cart if it doesn't exist
+        window.orderObj.cart_items.push({
+          meal_id: meal_id,
+          quantity: 1,
+          meal_name: mealName,
+          price: mealPrice
+        });
+      }
+
+      mealContainer.append(`<p class="added-to-cart-msg">Added to cart!</p>`);
 
     // Remove the paragraph after 3 seconds
-    setTimeout(function() {
-      mealContainer.find('.added-to-cart-msg').remove();
-    }, 1000);
-
-  });
+      setTimeout(function() {
+        mealContainer.find('.added-to-cart-msg').remove();
+      }, 1000);
+    }
+  })
+});
 
 
   // Scroll down functionality

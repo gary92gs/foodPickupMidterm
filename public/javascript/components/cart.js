@@ -2,32 +2,14 @@ $(() => {
   window.cart = {};
   const $mainContainer = $('#main-content');
 
-
-  function getCartPage() {
-    menuItems.clear();
-    let cartHTML = `
-        <div>
-          <h1>I am a cart Page!</h1>
-        </div>
-        <div>
-          <h2>Order Id</h2>
-          <h3>Cart item Id</h3>
-          <h4>Quantity</h4>
-        </div>
-      `;
-      $mainContainer.append(cartHTML);
-
-  }
-  window.cart.getCartPage = getCartPage;
-  console.log(window.cart);
   function createCartPage() {
     menuItems.clear();
     $cartWrapper = $('<div>').addClass('cart');
-    $cartWrapper.append('<h1>Order so far:<h1></h1>');
+    $cartWrapper.append('<div class="cart-head"><h1>Order so far:</h1></div>');
     let cartHTML;
     if (!window.orderObj || window.orderObj.cart_items.length === 0) {
       cartHTML = `
-        <div>
+        <div class="cart-head">
           <h1>Currently nothing in your Cart!</h1>
         </div>
       `
@@ -56,7 +38,7 @@ $(() => {
       window.orderObj.total_cost = parseFloat(totalCost);
 
       $mainContainer.append(`
-        <div>
+        <div id="checkout-div">
           <p>Total Cost: ${Math.round(totalCost * 100) / 100}</p>
           <button id="checkout-but">Checkout</button>
         </div>

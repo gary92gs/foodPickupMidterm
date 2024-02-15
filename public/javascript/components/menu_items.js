@@ -2,8 +2,6 @@ $(() => {
   window.menuItems = {}
   const $mainContainer = $('#main-content');
 
-  const $navContainer = $('#nav-alpha');
-
   const $menuWrapper = $('<div>').addClass('menu');
 
   const $navWrapper = $('<div>').addClass('nav-header');
@@ -20,7 +18,7 @@ $(() => {
   }
 
   function populateMenuItems() {
-
+    const $navContainer = $('#nav-alpha');
     $mainContainer.append($menuWrapper);
 
     let menuLinks = `
@@ -31,7 +29,6 @@ $(() => {
       <button id="drink-but" type="submit">DRINKS</button>
     </div>
   `;
-
     $navWrapper.html(menuLinks);
     $navContainer.append($navWrapper);
 
@@ -82,4 +79,5 @@ $(() => {
 
   window.menuItems.listMenuItems = listMenuItems;
   window.menuItems.clear = clearMenuItems;
+
 });

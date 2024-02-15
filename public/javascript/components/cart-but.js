@@ -52,29 +52,32 @@ $(document).on('click', '#checkout-but', function() {
     // Cleanup clear divs and reset cart
     menuItems.clear();
     window.orderObj.cart_items = [];
-    console.log(results);
     const $mainContainer = $('#main-content');
-    const placedAt = new Date(results.placed_at);
-    const formattedPlacedAt = new Intl.DateTimeFormat('en-US', {
-      dateStyle: 'medium',
-      timeStyle: 'short',
-    }).format(placedAt);
+
+    // I dunno why I had to do this
+    const storedDate = new Date(results.placed_at);
+
+    // Calculate the time difference between UTC and PST in milliseconds (PST is UTC - 8 hours)
+    const offsetMs = -8 * 60 * 60 * 1000;
+
+    // Apply the offset to the stored date to convert it to PST
+    const pstDate = new Date(storedDate.getTime() + offsetMs);
+
+    // Format the PST date as desired
+    const options = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true};
+    const pstDateString = pstDate.toLocaleString('en-US', options);
+
 
     $mainContainer.append(`
       <div>
-        <h1>Your order has been placed at ${formattedPlacedAt}!</h1>
-        <p> Your order # is: ${results.id}</p>
+        <h1>Your order has been placed at ${pstDateString}!</h1>
+        <p> Your order # is: ${results.id} You will receive a text when your order is confirmed with an ETA!</p>
       </div>
     `)
+    window.orderObj.order_id = results.id;
+    // sendMessage(`An order with the ID ${results.id} has been placed at ${formattedPlacedAt}`)
   })
 
-  // // Cleanup clear divs and reset cart
-  // menuItems.clear();
-  // window.orderObj.cart_items = [];
-  // // Function to send text to owner!
-  // const $mainContainer = $('#main-content');
-  // $mainContainer.append(`
-  // `)
 });
 
 
