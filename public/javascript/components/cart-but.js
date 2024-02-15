@@ -66,7 +66,7 @@ $(document).on('click', '#checkout-but', function() {
       </div>
     `)
     window.orderObj.order_id = results.id;
-    sendMessage(`An order with the ID ${results.id} has been placed at ${formattedPlacedAt}`)
+    // sendMessage(`An order with the ID ${results.id} has been placed at ${formattedPlacedAt}`)
   })
 
 });

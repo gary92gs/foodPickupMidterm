@@ -37,27 +37,30 @@
   width: 100%;
 }
 
-.meal-img-container img {
+/* .meal-img-container img {
   width: 100%;
   height: 100%;
-}
+} */
 
 .meal img {
-  max-width: 50%;
-  max-height: 40%;
+  max-width: 200px;
+  max-height: 200px;
   border: solid 1px blue;
   border-radius: 10px;
+  margin-top: 10px;
 }
 
 .meal .added-to-cart-msg {
+  color: white;
   padding: 5px 5px;
   border: solid 1px black;
   font-size: 2em;
   position: fixed;
   top: 225px;
-  right: 45%;
-  left: 45%;
-  background-color: red;
+  right: 40%;
+  left: 40%;
+  background-color: black;
+  border-radius: 20px;
 }
 
 #header-img img {

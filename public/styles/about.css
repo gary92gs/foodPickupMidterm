@@ -1,3 +1,17 @@
-/* .about-header {
-  background-color: #BC4749;
-} */
+.about-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.about-header img {
+  max-width: 500px;
+  max-width: 500px;
+}
+
+.about-header p {
+  border: solid 2px black;
+  padding: 10px 10px;
+}

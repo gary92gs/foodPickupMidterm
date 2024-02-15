@@ -5,11 +5,11 @@ $(() => {
   function createCartPage() {
     menuItems.clear();
     $cartWrapper = $('<div>').addClass('cart');
-    $cartWrapper.append('<div id="cart-head"><h1>Order so far:</h1></div>');
+    $cartWrapper.append('<div class="cart-head"><h1>Order so far:</h1></div>');
     let cartHTML;
     if (!window.orderObj || window.orderObj.cart_items.length === 0) {
       cartHTML = `
-        <div>
+        <div class="cart-head">
           <h1>Currently nothing in your Cart!</h1>
         </div>
       `

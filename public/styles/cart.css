@@ -3,7 +3,7 @@
   flex-direction: column;
 }
 
-.cart #cart-head {
+.cart-head {
   display: flex;
   justify-content: center;
 }
