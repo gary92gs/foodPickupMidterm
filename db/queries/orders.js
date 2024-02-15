@@ -104,8 +104,7 @@ const addOrder = (order) => {
 };
 
 
-const updateOrderIsActive = (orderId) => {
-  console.log(orderId);
+const updateOrderIsActive = (orderId) => {;
   return db.query(`
     UPDATE orders
     SET is_active = TRUE

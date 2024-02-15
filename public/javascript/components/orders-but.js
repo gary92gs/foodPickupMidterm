@@ -1,7 +1,7 @@
 // On click functions for order page
 $(document).on('click', '#accept-but', function() {
   let $button = $(this);
-  let orderId = $(this).closest(".order-info").find(".order-id h3").eq(1).text()
+  let orderId = $(this).closest(".order-info").find(".order-id h3[data-order-id]").eq(0).data("order-id");
   let estiTime = prompt("Estimated Order time in minutes?");
 
   estiTime = parseInt(estiTime);

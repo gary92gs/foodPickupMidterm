@@ -46,7 +46,7 @@ $(() => {
       <div class="order-info">
         <div class="order-id">
           <h3>Order by: ${order.username}</h3>
-          <h3>Order ID: ${order.id}</h3>
+          <h3 data-order-id="${order.id}">Order ID: ${order.id}</h3>
           <h3>Total Cost: ${order.total_cost}</h3>
           <h3>Placed at: ${convertPST(order.placed_at)}</h3>
         </div>
