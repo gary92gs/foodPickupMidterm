@@ -24,13 +24,14 @@ $(() => {
     <header>
       <div class="order-info">
         <div class="order-id">
-          <h3>${order.username}</h3>
-          <h3>${order.order_id}</h3>
-        </div>
-        <h3>${order.name}</h3>
-      </div>
+          <h3>${order.user_id}</h3>
+          <h3>${order.id}</h3>
+          <h3>${order.total_cost}</h3>
+          <h3>${order.placed_at}</h3>
+          <h3>${order.accepted_at}</h3>
+          h3>${order.completed_at}</h3>
       <div>
-        <p>${order.avg_prep_time_mins}</p>
+
       </div>
     </header>
     <footer>
