@@ -52,8 +52,8 @@ $(() => {
         </div>
 
         <div>
-          <button id="accept-but" type="submit">Accept</button>
-
+        <p>${order.is_active ? 'Order Accepted' : ''}</p>
+        ${order.is_active ? '' : '<button id="accept-but" type="submit">Accept</button>'}
         </div>
       </div>
     </header>
@@ -61,11 +61,8 @@ $(() => {
     </footer>
   </article>
     `);
-
-
-    //attach this original object to this jquery element
-    // $order.data("obj", order);
     return $order;
+
   };
 
   function renderOrders(orders) {
@@ -81,13 +78,8 @@ $(() => {
     for (const orderId in orders) {
       const order = orders[orderId];
 
-      console.log('orderid', orderId);
-      console.log('orders Object', orders);
       const $order = createOrderElement(order);
-      console.log('$order', $order);
 
-      // Construct an HTML string for the order - customize as needed
-      // const orderHtml = `<div class="order">${JSON.stringify(order, null, 2)}</div>`;
       // Append the order to the list
       $ordersList.append($order);
 

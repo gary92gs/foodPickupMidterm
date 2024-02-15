@@ -33,6 +33,7 @@ router.get('/', (req, res) => {
 //get the array of finalized cart items
 //req.body
 
+
 router.post('/', (req, res) => {
   //grab the order info
   const order = req.body
@@ -49,6 +50,18 @@ router.post('/', (req, res) => {
   });
 });
 
+// change active route
+router.post('/:id/isActive', (req, res) => {
+  const orderId = req.params.id;
+
+  orderQueries.updateOrderIsActive(orderId) // Convert string to boolean
+    .then(() => {
+      res.json({ message: 'Order is_active field updated successfully' });
+    })
+    .catch(error => {
+      res.status(500).json({ error: error.message });
+    });
+});
 
 //Delete route
 
