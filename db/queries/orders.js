@@ -27,7 +27,7 @@ const getOrderWithUserId = (userId) => {
 const getOrders = () => {
 
   return db.query(`
-  SELECT *
+  SELECT order_id, user_id
   FROM orders
   JOIN users ON user_id = users.id
   JOIN cart_items ON order_id = orders.id

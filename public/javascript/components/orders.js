@@ -25,7 +25,7 @@ $(() => {
       <div class="order-info">
         <div class="order-id">
           <h3>${order.username}</h3>
-          <h3>${order.id}</h3>
+          <h3>${order.order_id}</h3>
         </div>
         <h3>${order.name}</h3>
       </div>
