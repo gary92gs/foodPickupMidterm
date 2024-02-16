@@ -115,3 +115,12 @@ function updateActiveOrder(orderId) {
     method: "POST"
   });
 }
+
+function getActiveOrder(orderId) {
+  let url = "/api/orders/" + orderId + "/ActiveStatus";
+  return $.ajax({
+    url: url,
+    method: "GET"
+  });
+};
+

@@ -50,7 +50,21 @@ router.post('/', (req, res) => {
   });
 });
 
-// change active route
+// get active
+router.get('/:id/ActiveStatus', (req, res) => {
+  const orderId = req.params.id;
+
+  orderQueries.getOrderById(orderId) // Convert string to boolean
+    .then((order) => {
+      res.json(order);
+    })
+    .catch(error => {
+      res.status(500).json({ error: error.message });
+    });
+});
+
+
+// update active route
 router.post('/:id/isActive', (req, res) => {
   const orderId = req.params.id;
 

@@ -117,4 +117,20 @@ const updateOrderIsActive = (orderId) => {;
     return error;
   });
 };
-module.exports = { getOrders, getOrderWithUserId, deleteOrder, addOrder, updateOrderIsActive };
+
+const getOrderById = (orderId) => {
+  return db.query(`
+    SELECT orders.is_active
+    FROM orders
+    WHERE id = $1;
+  `, [orderId])
+  .then((orderResult) => {
+    return dbOrder = orderResult.rows[0];
+  })
+  .catch((error) => {
+    return error;
+  });
+
+
+}
+module.exports = { getOrders, getOrderWithUserId, deleteOrder, addOrder, updateOrderIsActive, getOrderById };
