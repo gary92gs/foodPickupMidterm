@@ -5,10 +5,11 @@ Food Pickup Midterm is a single-page app that allows users to place orders with 
 ## Final Product
 
 ### Main Menu
-
+!["Main Menu"](https://github.com/ryguyroberts/foodPickupMidterm/blob/master/docs/main%20page.png?raw=true)
 ### Cart
-
+!["Cart"](https://github.com/ryguyroberts/foodPickupMidterm/blob/master/docs/cart%20page.png?raw=true)
 ### Orders
+!["Orders"](https://github.com/ryguyroberts/foodPickupMidterm/blob/master/docs/order%20page.png?raw=true)
 
 
 ## Dependencies
