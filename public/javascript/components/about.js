@@ -13,7 +13,7 @@ $(() => {
 
       </div>
       `;
-      $mainContainer.append(aboutHTML);
+    $mainContainer.append(aboutHTML);
   }
   window.about.getAboutPage = getAboutPage;
 

@@ -18,7 +18,7 @@ function getAllOrders() {
 function getCartItems(id) {
   let url = `/api/cart-items/${id}`;
   return $.get( url );
-}
+};
 
 // Get cookie iD
 function getCurrentID () {
@@ -35,7 +35,7 @@ function getCurrentID () {
       }
     });
   });
-}
+};
 
 function addOrder(order) {
   let url = "/api/orders";
@@ -44,7 +44,7 @@ function addOrder(order) {
     method: "POST",
     contentType: "application/json",
     data: JSON.stringify(order)
-  })
+  });
 };
 
 function sendLogout() {
@@ -66,7 +66,7 @@ function sendLogout() {
       console.error('Logout failed:', errorThrown);
     }
   });
-}
+};
 
 // 2 is just a regular user
 function sendLogin() {
@@ -84,7 +84,7 @@ function sendLogin() {
       }
     },
   });
-}
+};
 
 
 // Send message route
@@ -106,7 +106,7 @@ function sendMessage(body) {
         console.error(error);
     }
   });
-}
+};
 
 function updateActiveOrder(orderId) {
   let url = "/api/orders/" + orderId + "/isActive";
@@ -114,7 +114,7 @@ function updateActiveOrder(orderId) {
     url: url,
     method: "POST"
   });
-}
+};
 
 function getActiveOrder(orderId) {
   let url = "/api/orders/" + orderId + "/ActiveStatus";

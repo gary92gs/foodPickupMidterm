@@ -4,20 +4,20 @@ $(() => {
 
   function convertPST(time) {
     //convert timestamp to pst
-  const storedDate = new Date(time);
+    const storedDate = new Date(time);
 
-  // Calculate the time difference between UTC and PST in milliseconds (PST is UTC - 8 hours)
-  const offsetMs = -8 * 60 * 60 * 1000;
+    // Calculate the time difference between UTC and PST in milliseconds (PST is UTC - 8 hours)
+    const offsetMs = -8 * 60 * 60 * 1000;
 
-  // Apply the offset to the stored date to convert it to PST
-  const pstDate = new Date(storedDate.getTime() + offsetMs);
+    // Apply the offset to the stored date to convert it to PST
+    const pstDate = new Date(storedDate.getTime() + offsetMs);
 
-  // Format the PST date as desired
-  const options = { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true};
-  const pstDateString = pstDate.toLocaleString('en-US', options);
+    // Format the PST date as desired
+    const options = { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true};
+    const pstDateString = pstDate.toLocaleString('en-US', options);
 
-  return pstDateString;
-  };
+    return pstDateString;
+  }
 
   function renderOrdersContainer() {
     menuItems.clear();
@@ -36,7 +36,7 @@ $(() => {
         <div id ="cart-items-list"></div>
         <section>
       `;
-      $mainContainer.append(ordersHTML);
+    $mainContainer.append(ordersHTML);
   }
 
   function createOrderElement(order) {
@@ -63,7 +63,7 @@ $(() => {
     `);
     return $order;
 
-  };
+  }
 
   function renderOrders(orders) {
     renderOrdersContainer();

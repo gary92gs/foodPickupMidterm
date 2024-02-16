@@ -7,10 +7,9 @@ $(document).on('click', '#accept-but', function() {
   estiTime = parseInt(estiTime);
 
   if (!isNaN(estiTime) && estiTime > 0) {
-  alert("The text would have been sent!");
-  // sendMessage(`Your Order number #${orderId} has been accepted. Estimated order ready for pickup in: ${estiTime} minutes`);
-  $button.closest("div").html("<p>Order Accepted</p>");
-  updateActiveOrder(orderId);
+    sendMessage(`Your Order number #${orderId} has been accepted. Estimated order ready for pickup in: ${estiTime} minutes`);
+    $button.closest("div").html("<p>Order Accepted</p>");
+    updateActiveOrder(orderId);
   } else {
     alert("Invalid time estimate.");
   }

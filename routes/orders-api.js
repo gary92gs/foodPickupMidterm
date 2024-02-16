@@ -6,11 +6,11 @@ const orderQueries = require('../db/queries/orders');
 router.get('/all', (req, res) => {
   orderQueries.getOrders()
     .then(orders => {
-      res.json({ orders })
+      res.json({ orders });
     })
     .catch(error => {
       res.status(500).json({error: error.message});
-  });
+    });
 });
 
 
@@ -23,11 +23,11 @@ router.get('/', (req, res) => {
   //get that user's order information
   orderQueries.getOrderWithUserId(userId)
     .then(orders => {
-      res.json({ orders })
+      res.json({ orders });
     })
     .catch(error => {
       res.status(500).json({error: error.message});
-    })
+    });
 });
 
 //get the array of finalized cart items
@@ -36,7 +36,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   //grab the order info
-  const order = req.body
+  const order = req.body;
   // order.user_id = 1;
 
 
@@ -47,7 +47,7 @@ router.post('/', (req, res) => {
     })
     .catch(error => {
       res.status(500).json({error: error.message});
-  });
+    });
 });
 
 // get active
@@ -90,8 +90,7 @@ router.post('/:id/delete', (req, res) => {
     })
     .catch(error => {
       res.status(500).json({error: error.message});
-    })
-
-  });
+    });
+});
 
 module.exports = router;

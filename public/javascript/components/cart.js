@@ -15,7 +15,7 @@ $(() => {
           <div class="cart-head">
             <h1>Currently nothing in your Cart!</h1>
           </div>
-        `
+        `;
         $mainContainer.append(cartHTML);
 
       } else {
@@ -45,10 +45,10 @@ $(() => {
             <p>Total Cost: ${Math.round(totalCost * 100) / 100}</p>
             <button id="checkout-but">Checkout</button>
           </div>
-        `)
+        `);
       }
     } else {
-      getOrderStatus(window.orderObj.order_id)
+      getOrderStatus(window.orderObj.order_id);
     }
   }
 
@@ -61,18 +61,18 @@ $(() => {
           <div class="cart-head">
             <h1>Your order #${window.orderObj.order_id} has been placed! but is still being confirmed. Check back here for updates!</h1>
           </div>
-          `
-          $mainContainer.append(cartHTML)
+          `;
+          $mainContainer.append(cartHTML);
         } else {
           cartHTML = `
           <div class="cart-head">
             <h1>Your order #${window.orderObj.order_id} has been confirmed! Check your phone for an ETA!</h1>
           </div>
-          `
-          $mainContainer.append(cartHTML)
+          `;
+          $mainContainer.append(cartHTML);
         }
 
-      })
+      });
   }
 
   window.cart.createCartPage = createCartPage;

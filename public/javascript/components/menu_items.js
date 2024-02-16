@@ -1,5 +1,5 @@
 $(() => {
-  window.menuItems = {}
+  window.menuItems = {};
   const $mainContainer = $('#main-content');
 
   const $menuWrapper = $('<div>').addClass('menu');
@@ -9,7 +9,7 @@ $(() => {
 
   function addMeal(meal, container) {
     container.append(meal);
-  };
+  }
 
   function clearMenuItems() {
     $menuWrapper.empty();
@@ -32,13 +32,13 @@ $(() => {
     $navWrapper.html(menuLinks);
     $navContainer.append($navWrapper);
 
-      // Re-create the meal category containers
-      const categories = ['Appetizers', 'Mains', 'Desserts', 'Beverages'];
-      categories.forEach(category => {
-        const $categoryContainer = $('<div>').addClass('meal-cat').attr('id', category);
-        $categoryContainer.append(`<h1>${category.charAt(0).toUpperCase() + category.slice(1)}</h1>`);
-        $menuWrapper.append($categoryContainer);
-      });
+    // Re-create the meal category containers
+    const categories = ['Appetizers', 'Mains', 'Desserts', 'Beverages'];
+    categories.forEach(category => {
+      const $categoryContainer = $('<div>').addClass('meal-cat').attr('id', category);
+      $categoryContainer.append(`<h1>${category.charAt(0).toUpperCase() + category.slice(1)}</h1>`);
+      $menuWrapper.append($categoryContainer);
+    });
 
     let imgHTML = `
       <div id="header-img">
@@ -55,7 +55,7 @@ $(() => {
 
     // Get meals
     for (const mealId in meals) {
-      const meal = meals[mealId]
+      const meal = meals[mealId];
       mealLayout = menuItem.listMenuItem(meal);
 
       let mealContainer;
@@ -75,7 +75,7 @@ $(() => {
 
       addMeal(mealLayout, mealContainer);
     }
-  };
+  }
 
   window.menuItems.listMenuItems = listMenuItems;
   window.menuItems.clear = clearMenuItems;

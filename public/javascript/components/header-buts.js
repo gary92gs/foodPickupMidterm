@@ -1,13 +1,13 @@
 // On click functions for header menu
 $(document).on('click', '#menu-but', function() {
   getAllMenuItems()
-  .then((json) => {
-    menuItems.listMenuItems(json.meals)
+    .then((json) => {
+      menuItems.listMenuItems(json.meals);
 
-  })
-  .catch((error) => {
-    console.error('Error fetching menu items:', error);
-  });
+    })
+    .catch((error) => {
+      console.error('Error fetching menu items:', error);
+    });
 });
 
 $(document).on('click', '#about-but', function() {
@@ -30,8 +30,8 @@ $(document).on('click', '#login-but', function() {
 
 $(document).on('click', '#orders-but', function() {
   getAllOrders()
-  .then((json) => {
-    orders.renderOrders(json.orders);
-  })
+    .then((json) => {
+      orders.renderOrders(json.orders);
+    });
 
 });
