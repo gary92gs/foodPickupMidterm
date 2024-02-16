@@ -13,3 +13,9 @@ body {
 }
 
 /*# sourceMappingURL=main.css.map */
+
+.page-footer {
+  background-color: #BC4749;
+  height: 50px;
+  margin-top: 110px;
+}

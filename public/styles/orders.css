@@ -10,9 +10,9 @@
 }
 
 .order-info {
-  border: #BC4749 solid 2px;
+  border: #F2E8CF solid 2px;
   text-align: center;
-  padding: 10px;
+  padding: 5px;
 }
 
 #orders-list {
@@ -20,12 +20,12 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-content:space-around;
+  align-content:space-between;
 }
 
 .order {
   margin-bottom: 10px;
-  background-color: #F2E8CF;
+  background-color: white;
   color: #BC4749;
 }
 
