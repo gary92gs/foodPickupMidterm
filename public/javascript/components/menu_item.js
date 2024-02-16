@@ -1,7 +1,7 @@
 $(() => {
   window.menuItem = {};
   function listMenuItem(meal) {
-  let mealLayout = `
+    let mealLayout = `
         <div class="meal">
           <div class="meal-img-container">
             <img src="${meal.image_url}">
@@ -13,8 +13,8 @@ $(() => {
           <p>Size: ${meal.size}</p>
           <button class="add-cart-but" type="submit">Add to Cart</button>
         </div>
-  `
-  return mealLayout;
+  `;
+    return mealLayout;
   // $mainContainer.append(mealLayout);
   }
 

@@ -16,9 +16,9 @@ const getCartItems = (orderId) => {
   JOIN menu_items ON menu_item_id = menu_items.id
   WHERE order_id = $1;
   `, [orderId])
-  .then((result) => {
-    return result.rows;
-  });
+    .then((result) => {
+      return result.rows;
+    });
 
 };
 
@@ -35,9 +35,9 @@ const getCartItem = (cartItemId) => {
   JOIN orders ON order_id = orders.id
   WHERE cart_items.id = $1;
   `, [cartItemId])
-  .then((result) => {
-    return result.rows;
-  });
+    .then((result) => {
+      return result.rows;
+    });
 
 };
 
@@ -55,9 +55,9 @@ const editCartItemQuant = (cartItemId, newQuantity) => {
   WHERE id = $2
   RETURNING *;
   `, [newQuantity, cartItemId])
-  .then((result) => {
-    return result.rows;
-  });
+    .then((result) => {
+      return result.rows;
+    });
 
 };
 
@@ -73,9 +73,9 @@ const deleteCartItem = (cartItemId) => {
   WHERE id = $1
   RETURNING *;
   `, [cartItemId])
-  .then((result) => {
-    return result.rows;
-  });
+    .then((result) => {
+      return result.rows;
+    });
 
 };
 
