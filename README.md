@@ -1,6 +1,6 @@
-# Food Pickup Midterm
+# Food Pickup App
 
-Food Pickup Midterm is a single-page app that allows users to place orders with a restaurent. While allowing both the client and the restaurant to recieve SMS texts for orders.
+Food Pickup is a single-page app that allows users to place orders with a restaurent. While allowing both the client and the restaurant to recieve SMS texts for orders.
 
 ## Final Product
 
